@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 1.2rem;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.menu {
+    list-style: none;
+    float: left;
+    background-color: #222;
+    width: 100vw;
+}
+
+.menu li {
+    height: 3rem;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.menu li {
+    margin-left: 3rem;
+}
+
+.menu li:nth-of-type(2) {
+    margin-left: 0;
+}
+
+.menu li:last-child {
+    float: right;
+    margin-right: 3rem;
+}
+
+.menu li img {
+    height: 80%;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    border-bottom: 0.1rem solid #222;
+}
+
+.menu li a:hover,
+.menu li img:hover {
+    border-bottom: 0.1rem solid #57A4ff;
+    color: #fff;
+}
