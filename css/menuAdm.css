@@ -5,6 +5,7 @@
 
 body {
     font-size: 1.2rem;
+    overflow-x: hidden;
 }
 
 nav {
@@ -27,10 +28,7 @@ nav {
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-
-.menu li {
-    margin-left: 3rem;
+    margin-left: 1.5rem;
 }
 
 .menu li:nth-of-type(2) {
@@ -50,11 +48,42 @@ nav {
     color: #fff;
     text-decoration: none;
     display: block;
+    padding: 0.5rem 1rem;
     border-bottom: 0.1rem solid #222;
 }
 
-.menu li a:hover,
-.menu li img:hover {
+.menu li a:hover {
     border-bottom: 0.1rem solid #57A4ff;
     color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .menu {
+        list-style: none;
+        float: left;
+        background-color: #222;
+        width: 100vw;
+        position: relative;
+    }
+
+    .menu li {
+        position: fixed;
+        display: none;
+    }
+
+    .menu li:last-child {
+        position: initial;
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-right: 2rem;
+    }
 }

@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 1.2rem;
+}
+
+.page {
+    padding-top: 3rem;
+    width: 100vw;
+    height: calc(100vh - 3rem);
+    min-height: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+h1 {
+    margin: 10vh 0;
+    font-size: 2.2rem;
+}
+
+h1:after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 40px;
+    background-color: #57A4ff;
+    margin: 20px auto 0;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    background-color: #57A4FF;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.conteudo img {
+    width: 30vw;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.conteudo div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.conteudo div p {
+    width: 30vw;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 3rem 3rem 3rem;
+}
+
+.conteudo div a {
+    text-decoration: none;
+    color: #FFF;
+    background-color: #000;
+    border-radius: 1rem;
+    padding: 1rem 4rem;
+}
+
+.conteudo div a:hover {
+    text-decoration: none;
+    color: #222;
+    background-color: #FFF;
+    border-radius: 1rem;
+    padding: 1rem 4rem;
+}
+
+
+/*///////////////////////////////////// PARA TABLET ////////////////////////////////////*/
+@media screen and (max-width: 1024px) {
+    .conteudo {
+        flex-direction: column;
+        background-color: #2488ff;
+        margin-bottom: 3rem;
+        min-height: min-content;
+    }
+
+    .conteudo img {
+        width: 70vw;
+    }
+
+    .conteudo div {
+        width: 70vw;
+    }
+
+    .conteudo div p {
+        margin: 3rem 1rem 3rem 1rem;
+        width: 50vw;
+    }
+
+    .conteudo div a {
+        margin-bottom: 3rem
+    }
+}
+
+
+/*///////////////////////////////////// PARA CELULAR ////////////////////////////////////*/
+@media screen and (max-width: 768px) {
+    .conteudo img {
+        width: 90vw;
+    }
+
+    .conteudo div {
+        width: 90vw;
+    }
+
+    .conteudo div p {
+        width: 70vw;
+    }
+}
