@@ -1,0 +1,32 @@
+.page {
+    padding-top: 3rem;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    background-color: #57A4FF;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 3rem 0;
+    padding: 2rem 0;
+}
+
+.conteudo ul {
+    margin: 0 3rem;
+    list-style: none;
+    padding-bottom: 2.5rem;
+    position: relative;
+}
+
+.conteudo ul li:first-child {
+    position: absolute;
+    bottom: 1rem;
+}
