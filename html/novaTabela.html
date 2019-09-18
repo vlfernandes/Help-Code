@@ -7,11 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nova Tabela</title>
 
-    <link rel="stylesheet" href="../css/menuAdm.css">
-    <link rel="stylesheet" href="../css/novaTabela.css">
     <script src="../js/lib/jquery-3.4.1.min.js"></script>
-    <script src="../js/novaTabela.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+
+    <script src="../js/lib/init-firebase.js"></script>
+
     <script src="../js/menuAdm.js"></script>
+    <link rel="stylesheet" href="../css/menuAdm.css">
+    <script src="../js/novaTabela.js"></script>
+    <link rel="stylesheet" href="../css/novaTabela.css">
 </head>
 
 <body>
@@ -20,36 +28,51 @@
             <li id="menuAdm"><img src="../img/menu.png" alt=""></li>
             <li><img src="../img/logo.png" alt=""></li>
             <li><a href="./help-code.html">Página Inicial</a></li>
-            <li><a href="#">Tabelas</a></li>
+            <li><a href="./tabelas.html">Tabelas</a></li>
             <li><a href="#">Produtos</a></li>
             <li><a href="#">Configurações</a></li>
-            <li><a href="#">Sair</a></li>
+            <li><a id="logOut" href="#">Sair</a></li>
         </ul>
     </nav>
 
     <section class="escolherTabela">
-        <div>
+        <div class="escolherTabelaBloco">
             <h1>Escolha uma tabela modelo ou customize a sua:</h1>
             <div id="tabelasModelos" class="tabelasModelos">
                 <div>
                     <div>
-                        <a href="#">Carro</a>
-                        <a href="#">Moto</a>
+                        <a href="#formTabela">Carro</a>
+                        <a href="#formTabela">Moto</a>
                     </div>
                     <div>
-                        <a href="#">Bicicleta</a>
-                        <a href="#">Imóvel</a>
+                        <a href="#formTabela">Bicicleta</a>
+                        <a href="#formTabela">Imóvel</a>
                     </div>
                 </div>
                 <div>
                     <div>
-                        <a href="#">Computador</a>
-                        <a href="#">Celular</a>
+                        <a href="#formTabela">Computador</a>
+                        <a href="#formTabela">Celular</a>
                     </div>
                     <div>
-                        <a href="#">Monitor/TV</a>
+                        <a href="#formTabela">Monitor\TV</a>
                         <a class="custom" href="#tipoTabela">Customizar</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="tipoTabela" id="tipoTabela">
+        <div id="conteudo" class="conteudo">
+            <h1>Escolha o estilo de tabela</h1>
+            <div>
+                <div>
+                    <img src="../img/tabelaSimples.png" alt="Tabelas simples">
+                    <a href="#formTabela">Simples</a>
+                </div>
+                <div>
+                    <img src="../img/tabelaSecao.png" alt="Tabela dividida por seção">
+                    <a href="#formTabela">Dividido por seções</a>
                 </div>
             </div>
         </div>

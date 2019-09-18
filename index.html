@@ -1,15 +1,117 @@
-<!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<head title="HomePage"></head>
+<link rel="stylesheet" type="text/css" href="./css/index.css" media="screen" />
+<link rel="stylesheet" type="text/javascript" src="jquery.js">
+<link type="text/javascript" src="animacao.js">
 
 <body>
-    <a href="./html/help-code.html">ENTRAR</a>
+    <nav class="menu">
+        <ul>
+            <li><img src="./img/index/logoFinalizado.svg" class="Logo" title="Help Code"></li>
+            <li class="paginaInicial"><a href="#">Página Inicial</a></li>
+            <li class="funcionamento"><a href="#carro">Funcionamento</a></li>
+            <li class="instrucoes"><a href="#instrucoes">Passo a Passo</a></li>
+            <li class="tabelas"><a href="#tabelas">Tabelas</a></li>
+            <li class="entrar"><a href="./html/login.html">Entrar</a></li>
+
+        </ul>
+    </nav>
+    <!------------------------------------------------------------------------------------------------>
+    <div class="Fundo">
+        <div class="Informacao">
+            <img id="myVideo" src="./img/index/video.gif" alt="">
+            <div class="HelpCode">
+                <h1>Help Code</h1>
+                <h3 class="Subtitulo">Todas as informações dos seus produtos nas mãos dos seus clientes</h3>
+                <div class="Botoes">
+                    <a href="#tabelas" class="Iniciar">Iniciar</a>
+                    <a href="#instrucoes" class="Instrucoes">Instruções</a>
+                </div>
+            </div>
+        </div>
+        <!------------------------------------------------------------------------------------------------>
+        <div class="Informacao" id="carro">
+            <div class="TextoFuncionamento">
+                <a>Funcionamento</a>
+            </div>
+            <div class="EspacoCarro">
+                <img src="./img/index/teste.png" class="carro">
+            </div>
+        </div>
+
+        <!------------------------------------------------------------------------------------------------->
+        <div class="Informacao" id="instrucoes">
+            <div class="PassoAPasso">
+                <a>Passo a passo para utilização</a>
+            </div>
+            <div class="Retangulo">
+                <div class="Quadrado">
+                    <img class="ImagemPasso" src="./img/index/addTable.png">
+                    <div class="TextoPasso1">
+                        <a>Crie uma tabela</a>
+                    </div>
+                </div>
+                <div class="Quadrado">
+                    <img href="" class="ImagemPasso" src="./img/index/registrarProdutos.png">
+                    <div class="TextoPasso2">
+                        <a>Cadastre seu produto</a>
+                    </div>
+                </div>
+                <div class="Quadrado">
+                    <img class="ImagemPasso" src="./img/index/print.png">
+                    <div class="TextoPasso3">
+                        <a>Imprima e cole onde quiser</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Deixei "Um" para os tres pois nao altera nada -->
+        <!------------------------------------------------------------------------------------------------>
+        <div class="Informacao" id="tabelas">
+            <div class="TextoTabelas">
+                <a>Escolha uma das tabelas para começar</a>
+            </div>
+            <div class="ConteudoTabelas">
+                <!--                        <div class="TabelaUm">-->
+                <div class="Tabelas">
+                    <a class="Titulo1">Help Code</a>
+                    <div class="ConteudoTabela1">
+                        <a class="Conteudo1">Tabelas: 1</a>
+                        <a class="Conteudo2">Cadastros/mês: 10</a>
+                        <a class="Conteudo3">Mensageiro: X</a>
+                        <a class="Valor1">R$0,00</a>
+                    </div>
+                    <div class="BotaoTabelaUm">
+                        <a href="./html/login.html" class="Registrar1">Registrar</a>
+                    </div>
+                </div>
+                <div class="Tabelas">
+                    <!--                            <img src="EstrelaPro.png" class="Tabelas">-->
+                    <a class="Titulo2">Help Code Pro <img src="./img/index/EstrelaPro.png" width="20px" height="20px"
+                            class="Estrela"></a>
+                    <div class="ConteudoTabela2">
+                        <a class="Conteudo1">Tabelas: Ilimitado</a>
+                        <a class="Conteudo2">Cadastros/mês: Ilimitado</a>
+                        <a class="Conteudo3">Mensageiro: X</a>
+                        <a class="Valor2">R$XX,XX</a>
+                    </div>
+                    <div class="BotaoTabelaDois">
+                        <a href="./html/login.html" class="Registrar2">Registrar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <footer class="Rodape">
+        <div class="TextoRodape">
+            <p class="Copyright">Copyright &#169; 2019 - Todos os direitos reservados - Help Code</p>
+        </div>
+        <div class="EspacoLogo">
+            <img class="LogoRodape" src="./img/index/logoFinalizado.svg">
+        </div>
+    </footer>
 </body>
 
 </html>

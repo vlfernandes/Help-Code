@@ -15,7 +15,7 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 5;
+    z-index: 10;
 }
 
 .menu {
@@ -67,9 +67,6 @@ nav {
     border-bottom: 0.1rem solid #57A4ff;
     color: #fff;
 }
-
-
-
 
 @media screen and (max-width: 768px) {
     .menu {
@@ -147,4 +144,86 @@ nav {
         font-size: 1.2rem;
         padding: 0.5rem 1rem;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes lds-eclipse {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes lds-eclipse {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.lds-css {
+    height: 100vh;
+    width: 100vw;
+    background-color: #222;
+    position: fixed;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lds-css div {
+    -webkit-animation: lds-eclipse 0.9s linear infinite;
+    animation: lds-eclipse 0.9s linear infinite;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    box-shadow: 0 4px 0 0 #57a4ff;
+}
+
+.lds-css span {
+    font-size: 2.2rem;
+    margin-top: 2rem;
+    color: #ddd;
+}
+
+.lds-css span:after {
+    content: "";
+    display: block;
+    height: 0.2rem;
+    width: 7rem;
+    background-color: #57A4ff;
+    margin: 1rem auto 0;
 }

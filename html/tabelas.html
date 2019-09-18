@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tabelas</title>
+
+    <script src="../js/lib/jquery-3.4.1.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+
+    <script src="../js/lib/init-firebase.js"></script>
+
+    <script src="../js/menuAdm.js"></script>
+    <link rel="stylesheet" href="../css/menuAdm.css">
+    <script src="../js/tabelas.js"></script>
+    <link rel="stylesheet" href="../css/tabelas.css">
+</head>
+
+<body>
+    <div class="lds-css ng-scope">
+        <div></div>
+        <span>Help Code</span>
+    </div>
+    <nav>
+        <ul class="menu">
+            <li id="menuAdm"><img src="../img/menu.png" alt=""></li>
+            <li><img src="../img/logo.png" alt=""></li>
+            <li><a href="./help-code.html">Página Inicial</a></li>
+            <li><a href="./tabelas.html">Tabelas</a></li>
+            <li><a href="#">Produtos</a></li>
+            <li><a href="#">Configurações</a></li>
+            <li><a id="logOut" href="#">Sair</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="containerTitulo">
+            <h1>Suas tabelas</h1>
+        </section>
+        <section class="container">
+
+            <div class="tabela addTabela">
+                <h2>Adicionar nova tabela</h2>
+                <span>+</span>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

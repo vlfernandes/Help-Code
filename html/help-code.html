@@ -7,30 +7,44 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Help Code</title>
 
-    <link rel="stylesheet" href="../css/menuAdm.css">
-    <link rel="stylesheet" href="../css/help-code.css">
     <script src="../js/lib/jquery-3.4.1.min.js"></script>
-    <script src="../js/help-code.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+
+    <script src="../js/lib/init-firebase.js"></script>
+
     <script src="../js/menuAdm.js"></script>
+    <link rel="stylesheet" href="../css/menuAdm.css">
+    <script src="../js/help-code.js"></script>
+    <link rel="stylesheet" href="../css/help-code.css">
+
+
+
 </head>
 
 <body>
+    <div class="lds-css ng-scope">
+        <div></div>
+        <span>Help Code</span>
+    </div>
     <nav>
         <ul class="menu">
             <li id="menuAdm"><img src="../img/menu.png" alt=""></li>
             <li><img src="../img/logo.png" alt=""></li>
             <li><a href="./help-code.html">Página Inicial</a></li>
-            <li><a href="#">Tabelas</a></li>
+            <li><a href="./tabelas.html">Tabelas</a></li>
             <li><a href="#">Produtos</a></li>
             <li><a href="#">Configurações</a></li>
-            <li><a href="#">Sair</a></li>
+            <li><a id="logOut" href="#">Sair</a></li>
         </ul>
     </nav>
 
     <section id="page1" class="page typeIsNotUser">
-        <h1>Bem vindo ao Help Code</h1>
+        <h1>Olá, </h1>
         <div class="conteudo">
-            <img src="../img/addTable.png" alt="Adicionar tabela">
+            <img src="../img/addTable.png" alt="Adicionar Tabela">
             <div>
                 <p>Como é sua primeira vez no site, é necessario configurar sua primeira tabela.</p>
                 <a href="./novaTabela.html">Configurar</a>
@@ -39,7 +53,7 @@
     </section>
 
     <section id="page2" class="page typeIsNotUser">
-        <h1>Bem vindo ao Help Code</h1>
+        <h1>Olá, </h1>
         <div class="conteudo">
             <img src="../img/registrarProdutos.png" alt="Adicionar Produto">
             <div>
@@ -50,15 +64,15 @@
     </section>
 
     <section id="page3" class="page typeIsNotUser">
-        <h1>Bem vindo ao Help Code</h1>
+        <h1>Olá, </h1>
         <div class="conteudo conteudoFinal">
-            <div>
-                <img src="../img/addTable.png" alt="Adicionar tabela">
-                <a href="./novaTabela.html">Cadastrar nova tabela</a>
+            <div id="areaTabela">
+                <img src="../img/addTable.png" alt="Adicionar Tabela">
+                <a id="tabela" href="./novaTabela.html">Cadastrar nova tabela</a>
             </div>
-            <div>
+            <div id="areaProduto">
                 <img src="../img/registrarProdutos.png" alt="Adicionar Produto">
-                <a href="./novoProduto.html">Cadastrar novo produto</a>
+                <a id="produto" href="./novoProduto.html">Cadastrar novo produto</a>
             </div>
         </div>
     </section>

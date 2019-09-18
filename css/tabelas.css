@@ -1,0 +1,249 @@
+main {
+    height: calc(100vh - 3rem);
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3rem;
+    min-height: 30rem;
+}
+
+h1 {
+    margin: 10vh 0;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+h1:after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 40px;
+    background-color: #57A4ff;
+    margin: 9px auto 0;
+}
+
+.container {
+    width: 70rem;
+    height: fit-content;
+    background-color: #ddd;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.addTabela {
+    cursor: pointer;
+}
+
+.addTabela span {
+    flex: 1;
+    width: 100%;
+    font-size: 5rem;
+}
+
+.tabela {
+    width: 10rem;
+    height: 15rem;
+    background-color: #57a4ff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.tabela h2 {
+    flex: 1;
+    text-align: center;
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    width: 10rem;
+    font-size: 1.3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabela div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 10rem;
+}
+
+.tabela span {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+.tabela span img {
+    width: 1.9rem;
+    height: 1.9rem;
+}
+
+.tabela span a {
+    color: #000;
+    text-decoration: none;
+}
+
+.tabela span:hover {
+    filter: invert(31%) sepia(1%) saturate(1076%) hue-rotate(319deg) brightness(92%) contrast(79%);
+}
+
+.notificacao {
+    background-color: rgba(123, 123, 123, 0.9);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notificacao .delete {
+    height: min-content;
+    width: 40rem;
+    background-color: #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 5rem;
+}
+
+.notificacao .delete .titulo {
+    margin-bottom: 4rem;
+    width: 100%;
+    text-align: center;
+    color: #FFF;
+}
+
+.notificacao .delete span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notificacao .delete span a {
+    text-decoration: none;
+    color: #FFF;
+    width: 7rem;
+    padding: 1rem 3rem;
+    margin: 0 1rem;
+    background-color: #57A4ff;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.notificacao .delete span a:hover {
+    background-color: #2488ff;
+}
+
+
+@keyframes lds-eclipse {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes lds-eclipse {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+#load {
+    -webkit-animation: lds-eclipse 0.9s linear infinite;
+    animation: lds-eclipse 0.9s linear infinite;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    box-shadow: 0 4px 0 0 #57a4ff;
+}
+
+
+
+@media screen and (max-width: 1250px) {
+    .container {
+        width: 42rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 28rem;
+    }
+
+    .notificacao .delete {
+        width: 90vw;
+        height: max-content;
+        padding: 3rem 1rem;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .container {
+        width: 14rem;
+    }
+
+    .notificacao .delete span {
+        flex-direction: column;
+    }
+
+    .notificacao .delete span a {
+        margin: 1rem 0;
+    }
+}
