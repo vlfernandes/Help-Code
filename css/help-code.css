@@ -9,6 +9,17 @@
     align-items: center;
 }
 
+section {
+    background-image: url("../img/fundoADM.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.typeIsNotUser {
+    display: none;
+}
+
 h1 {
     margin: 10vh 0;
     font-size: 2.2rem;
@@ -60,6 +71,7 @@ h1:after {
     background-color: #000;
     border-radius: 1rem;
     padding: 1rem 4rem;
+    text-align: center;
 }
 
 .conteudo div a:hover {
@@ -71,8 +83,55 @@ h1:after {
 }
 
 
+.conteudoFinal {
+    justify-content: space-between;
+    background-color: transparent;
+    width: 45vw;
+}
+
+.conteudoFinal img {
+    width: 20vw;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.conteudoFinal div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.conteudoFinal div a {
+    text-decoration: none;
+    color: #FFF;
+    background-color: #000;
+    border-radius: 0;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+.conteudoFinal div a:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #222;
+    border-radius: 0;
+    padding: 1rem 0;
+}
+
+
 /*///////////////////////////////////// PARA TABLET ////////////////////////////////////*/
 @media screen and (max-width: 1024px) {
+    section {
+        background-image: url("");
+    }
+
+    section:last-child {
+        background-image: url("../img/fundoADM.png");
+    }
+
     .conteudo {
         flex-direction: column;
         background-color: #2488ff;
@@ -96,16 +155,41 @@ h1:after {
     .conteudo div p {
         margin: 3rem 1rem 3rem 1rem;
         width: 50vw;
+        color: #fff;
     }
 
     .conteudo div a {
-        margin-bottom: 3rem
+        margin-bottom: 3rem;
+    }
+
+    .conteudoFinal {
+        flex-direction: row;
+        background-color: transparent;
+        margin-bottom: 0;
+        min-height: initial;
+        width: 70vw;
+    }
+
+    .conteudoFinal img {
+        width: 30vw;
+    }
+
+    .conteudoFinal div {
+        width: initial;
+    }
+
+    .conteudoFinal div a {
+        margin-bottom: 0;
     }
 }
 
 
 /*///////////////////////////////////// PARA CELULAR ////////////////////////////////////*/
 @media screen and (max-width: 768px) {
+    section:last-child {
+        background-image: url("");
+    }
+
     .conteudo img {
         width: 90vw;
     }
@@ -116,5 +200,32 @@ h1:after {
 
     .conteudo div p {
         width: 70vw;
+    }
+
+    .page:last-child {
+        height: min-content;
+    }
+
+    .conteudoFinal {
+        flex-direction: column;
+        justify-content: start;
+        width: 100vw;
+        height: 35rem;
+    }
+
+    .conteudoFinal img {
+        width: 20rem;
+    }
+
+    .conteudoFinal div {
+        width: initial;
+    }
+
+    .conteudoFinal div:first-child {
+        margin-bottom: 2rem;
+    }
+
+    .conteudoFinal div a {
+        margin-bottom: 0;
     }
 }

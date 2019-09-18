@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="../css/help-code.css">
     <script src="../js/lib/jquery-3.4.1.min.js"></script>
     <script src="../js/help-code.js"></script>
+    <script src="../js/menuAdm.js"></script>
 </head>
 
 <body>
     <nav>
         <ul class="menu">
+            <li id="menuAdm"><img src="../img/menu.png" alt=""></li>
             <li><img src="../img/logo.png" alt=""></li>
             <li><a href="./help-code.html">Página Inicial</a></li>
             <li><a href="#">Tabelas</a></li>
@@ -24,13 +26,39 @@
             <li><a href="#">Sair</a></li>
         </ul>
     </nav>
-    <section id="page" class="page">
+
+    <section id="page1" class="page typeIsNotUser">
         <h1>Bem vindo ao Help Code</h1>
-        <div id="conteudo" class="conteudo">
-            <img src="" alt="Adicionar tabela"> <!-- src indicado no js -->
+        <div class="conteudo">
+            <img src="../img/addTable.png" alt="Adicionar tabela">
             <div>
-                <p></p> <!-- texto indicado no js -->
-                <a href=""></a> <!-- link indicado no js /////////// texto indicado no js -->
+                <p>Como é sua primeira vez no site, é necessario configurar sua primeira tabela.</p>
+                <a href="./novaTabela.html">Configurar</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="page2" class="page typeIsNotUser">
+        <h1>Bem vindo ao Help Code</h1>
+        <div class="conteudo">
+            <img src="../img/registrarProdutos.png" alt="Adicionar Produto">
+            <div>
+                <p>Cadastre seu primeiro produto.</p>
+                <a href="./novoProduto.html">Cadastrar</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="page3" class="page typeIsNotUser">
+        <h1>Bem vindo ao Help Code</h1>
+        <div class="conteudo conteudoFinal">
+            <div>
+                <img src="../img/addTable.png" alt="Adicionar tabela">
+                <a href="./novaTabela.html">Cadastrar nova tabela</a>
+            </div>
+            <div>
+                <img src="../img/registrarProdutos.png" alt="Adicionar Produto">
+                <a href="./novoProduto.html">Cadastrar novo produto</a>
             </div>
         </div>
     </section>

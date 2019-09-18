@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,12 +8,14 @@
 body {
     font-size: 1.2rem;
     overflow-x: hidden;
+    font-family: 'Nunito', sans-serif;
 }
 
 nav {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 5;
 }
 
 .menu {
@@ -31,7 +35,14 @@ nav {
     margin-left: 1.5rem;
 }
 
-.menu li:nth-of-type(2) {
+.menu li:first-child {
+    display: none;
+    height: 2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.menu li:nth-of-type(3) {
     margin-left: 0;
 }
 
@@ -57,13 +68,10 @@ nav {
     color: #fff;
 }
 
-@media screen and (max-width: 768px) {
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
 
+
+
+@media screen and (max-width: 768px) {
     .menu {
         list-style: none;
         float: left;
@@ -73,11 +81,11 @@ nav {
     }
 
     .menu li {
-        position: fixed;
         display: none;
     }
 
-    .menu li:last-child {
+    .menu li:last-child,
+    .menu li:first-child {
         position: initial;
         display: block;
         display: flex;
@@ -85,5 +93,58 @@ nav {
         align-items: center;
         text-align: center;
         margin-right: 2rem;
+        margin-left: 0.5rem;
+    }
+
+    .menuVisivel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: rgba(45, 45, 45, 0.99);
+    }
+
+    .menuVisivel li {
+        display: block;
+        margin: 0;
+        height: fit-content;
+    }
+
+    .menuVisivel li:nth-of-type(2) {
+        display: none;
+    }
+
+    .menuVisivel li:first-child {
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin-left: 0.5rem;
+    }
+
+    .menuVisivel li:last-child {
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin-right: 2rem;
+        height: 3rem;
+    }
+
+    .menuVisivel li a {
+        border-bottom: 0;
+        font-size: 2rem;
+        padding: 0.1rem 2rem;
+        margin: 1rem 0;
+        /* border-bottom: 0.1rem solid #57A4ff; */
+    }
+
+    .menu li a:hover {
+        border-bottom: 0;
+        color: #fff;
+    }
+
+    .menuVisivel li:last-child a {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
     }
 }
