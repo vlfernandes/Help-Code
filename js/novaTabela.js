@@ -38,7 +38,7 @@ $(function () {
         ["Video", "Resolução de gravação", "Auto focagem de video", "Video camera frontal"],
         ["Conectividade", "Wi-fi", "bluetooth", "USB", "GPS", "NFC"],
         ["Sensores", "Impressão digital", "Acelerometro", "Proximidade", "Giroscopio", "Búsula", "Mic. resução de ruido"],
-        ["Radia FM", "TV", "Vibração", "Viva voz"]
+        ['Funções', "Radio FM", "TV", "Vibração", "Viva voz"]
     ]
 
     $("#tabelasModelos").on("click", "a", function () {
@@ -52,13 +52,14 @@ $(function () {
                 <div id="conteudo" class="conteudo">
                     <h1>Escolha o estilo de tabela</h1>
                     <div>
-                        <div>
+                        <div id="divCiarTabelaSimples">
                             <img src="../img/tabelaSimples.png" alt="Tabelas simples">
-                            <a href="#formTabela">Simples</a>
+                            <a id="ciarTabelaSimples" href="#formTabela">Simples</a>
                         </div>
-                        <div>
+                        <div class="divisao"></div>
+                        <div id="divCiarTabelaSecao">
                             <img src="../img/tabelaSecao.png" alt="Tabela dividida por seção">
-                            <a href="#formTabela">Dividido por seções</a>
+                            <a id="ciarTabelaSecao" href="#formTabela">Dividido por seções</a>
                         </div>
                     </div>
                 </div>
@@ -99,17 +100,23 @@ $(function () {
         }
     });
 
+
     /* /////////////////////////// Escolhe o tipo de tabela ///////////////////////////////// */
-    $("body").on("click", "#tipoTabela a", function () {
+    $("body").on("click", "#divCiarTabelaSimples", function () {
         $("#formTabela").remove();
         idSecao = 1;
         idItem = 1;
-        if ($(this).text() == "Dividido por seções") {
-            adicionarTabelaSecao();
-        } else if ($(this).text() == "Simples") {
-            adicionarTabelaSimples();
-        }
+        adicionarTabelaSimples();
+        window.location.href = '#formTabela';
     });
+    $("body").on("click", "#divCiarTabelaSecao", function () {
+        $("#formTabela").remove();
+        idSecao = 1;
+        idItem = 1;
+        adicionarTabelaSecao();
+        window.location.href = '#formTabela';
+    });
+
 
     /* /////////////////////////// Adicionando nova seção ///////////////////////////////// */
     $("body").on("click", "#addSecao", function () {
@@ -166,7 +173,7 @@ $(function () {
                                 $("#load").addClass("escondido");
                                 $("#notificacao").append(`
                                     <div class="bloco">
-                                        <h2 class="titulo">Algum item ficou vazio, de um nome para ele.</h2>
+                                        <h2 class="titulo">Algum item ficou vazio, dê um nome para ele.</h2>
                                         <span>
                                             <a id="okNotificacao" href="#">Ok</a>
                                         </span>
@@ -177,7 +184,7 @@ $(function () {
                             $("#load").addClass("escondido");
                             $("#notificacao").append(`
                                 <div class="bloco">
-                                    <h2 class="titulo">Alguma seção ficou vazia, de um nome para ela.</h2>
+                                    <h2 class="titulo">Alguma seção ficou vazia, dê um nome para ela.</h2>
                                     <span>
                                         <a id="okNotificacao" href="#">Ok</a>
                                     </span>
@@ -320,10 +327,30 @@ $(function () {
     }
 
     function escreverTabela(userId, nomeTabela, tabela) {
+        console.log(tabela)
         setTimeout(() => {
             db.collection("usuarios").doc(userId).collection("tabelas").doc().set({
                 [nomeTabela]: tabela
             }).then(function () {
+
+                // db.collection("usuarios").doc(userId).collection("tabelas").get().then(function (tabelas) {
+                //     tabelas.forEach(tabela => {
+                //         if (Object.keys(tabela.data())[0] == nomeTabela) {
+                //             let tabelaId = tabela.id
+                //             db.collection("produtos").doc().set({
+                //                 [userId]: tabelaId
+                //             }).then(function () {
+
+                //             }).catch(function (error) {
+                //                 console.error("Error writing document: ", error);
+                //             });
+
+                //         }
+                //     });
+
+                // }).catch(function (error) {
+                //     console.log(error);
+                // });
                 $("#bloco").removeClass("escondido");
                 $("#load").addClass("escondido");
             }).catch(function (error) {

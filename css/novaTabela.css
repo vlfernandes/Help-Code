@@ -98,33 +98,34 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #57A4FF;
+    background-image: linear-gradient(#000, #444);
     border-radius: 1rem;
     width: 43vw;
     padding: 1.5rem 0 0 0;
 }
 
+.tipoTabela .conteudo h1 {
+    color: #DDD;
+}
+
 .tipoTabela img {
     width: 20vw;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
 }
 
-.tipoTabela .conteudo div div:first-child img {
-    border-right: 0.1rem solid #000;
-    border-top: 0.1rem solid #000;
-}
-
-.tipoTabela .conteudo div div:last-child img {
-    border-left: 0.1rem solid #000;
-    border-top: 0.1rem solid #000;
+.tipoTabela .conteudo .divisao {
+    height: 10rem;
+    width: 0.3rem;
+    background-color: #ddd;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
 }
 
 .tipoTabela .conteudo div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     width: 100%;
     border-radius: 1rem;
     overflow: hidden;
@@ -140,23 +141,20 @@ h1 {
     padding: 1.5rem 0 0 0;
 }
 
+.tipoTabela .conteudo div div:hover {
+    cursor: pointer;
+}
+
 .tipoTabela .conteudo div div a {
     text-align: center;
     text-decoration: none;
-    color: #FFF;
-    background-color: #000;
+    color: #DDD;
+    background-color: transparent;
     border-radius: 0;
     padding: 1rem 0;
     width: 100%;
 }
 
-.tipoTabela .conteudo div div a:hover {
-    text-decoration: none;
-    color: #000;
-    background-color: #FFF;
-    border-radius: 0;
-    padding: 1rem 0;
-}
 
 
 

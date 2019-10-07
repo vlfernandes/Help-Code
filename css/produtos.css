@@ -36,17 +36,17 @@ main {
     border-radius: 1rem;
 }
 
-.addTabela {
+.addProduto {
     cursor: pointer;
 }
 
-.addTabela span {
+.addProduto span {
     flex: 1;
     width: 100%;
     font-size: 5rem;
 }
 
-.tabela {
+.produto {
     width: 10rem;
     height: 15rem;
     background-color: #57a4ff;
@@ -59,7 +59,7 @@ main {
     border-radius: 1rem;
 }
 
-.tabela h2 {
+.produto h2 {
     flex: 1;
     text-align: center;
     /* These are technically the same, but use both */
@@ -85,7 +85,7 @@ main {
     justify-content: center;
 }
 
-.tabela div {
+.produto div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -93,7 +93,7 @@ main {
     width: 10rem;
 }
 
-.tabela span {
+.produto span {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -103,17 +103,17 @@ main {
     cursor: pointer;
 }
 
-.tabela span img {
+.produto span img {
     width: 1.9rem;
     height: 1.9rem;
 }
 
-.tabela span a {
+.produto span a {
     color: #000;
     text-decoration: none;
 }
 
-.tabela span:hover {
+.produto span:hover {
     filter: invert(31%) sepia(1%) saturate(1076%) hue-rotate(319deg) brightness(92%) contrast(79%);
 }
 
@@ -246,140 +246,4 @@ main {
     .notificacao .delete span a {
         margin: 1rem 0;
     }
-}
-
-
-
-
-
-
-.formTabela {
-
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    min-height: calc(100vh - 3rem);
-    height: min-content;
-    width: 100vw;
-    z-index: 20;
-    background-color: rgba(123, 123, 123, 0.9);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.formTabela div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.formTabela div h1 {
-    margin: 3rem 0 0 0;
-}
-
-.formTabela div .nomeTabela {
-    border-width: 0;
-    outline: none;
-    font-size: 1.2rem;
-    border: 0.1rem solid #000;
-    border-radius: 0.5rem;
-    background-color: transparent;
-    color: #000;
-    text-align: center;
-    height: 2rem;
-    margin-top: 3.2rem;
-}
-
-.formTabela .sairEdit {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 2rem;
-    text-decoration: none;
-    color: #000;
-}
-
-.formTabela .fundoDoFormulario {
-    width: calc(40rem + 20vw);
-    height: min-content;
-    padding: 0 3rem;
-    background-color: #57A4FFAA;
-    border-radius: 1rem;
-    flex-direction: column;
-    position: relative;
-}
-
-.formTabela .conteudo {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: flex-start;
-    background-color: transparent;
-    border-radius: 1rem;
-    overflow: hidden;
-    margin: 1rem 0;
-    padding: 2rem 0;
-    width: 28rem;
-}
-
-.formTabela .estiloDeTabelaItem {
-    padding: 0;
-    margin: 0;
-}
-
-.formTabela .conteudo ul {
-    margin: 0 3rem;
-    list-style: none;
-    padding-bottom: 2.5rem;
-    position: relative;
-}
-
-.formTabela .conteudo ul li:first-child {
-    position: absolute;
-    bottom: 0.7rem;
-    padding: 0.5rem 0.8rem 0 0;
-    width: max-content;
-    cursor: pointer;
-}
-
-.formTabela .conteudo ul li div {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-}
-
-.formTabela .conteudo ul img {
-    height: 1.5rem;
-    padding: 0.5rem 1rem 0 0;
-    margin-left: 0.5rem;
-    cursor: pointer;
-    margin-top: 0.6rem;
-}
-
-.formTabela .conteudo ul li input {
-    outline: none;
-    border: 0.1rem solid #2488ff;
-    border-radius: 0.5rem;
-    padding: 0 0.2rem;
-    height: 1.5rem;
-    font-size: 1rem;
-    margin-top: 0.5rem;
-}
-
-.formTabela .concluir {
-    align-self: flex-end;
-    color: #FFF;
-    text-decoration: none;
-    background-color: #222;
-    border-radius: 1rem;
-    padding: 1rem 2rem;
-    margin-bottom: 2rem;
-}
-
-.formTabela .concluir:hover {
-    color: #222;
-    background-color: #FFF;
 }

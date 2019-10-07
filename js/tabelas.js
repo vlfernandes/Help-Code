@@ -30,11 +30,29 @@ $(function () {
                 </section>
             `);
         } else if ($(this).text() == "Editar") {
-            console.log("Editar");
+            adicionarTabelaSecao()
+            tabelaAtual = $(this).parent().parent().parent().find("h2");
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    db.collection("usuarios").doc(user.uid).collection("tabelas").get().then(function (tabelas) {
+                        tabelas.forEach(tabela => {
+                            if (Object.keys(tabela.data())[0] == tabelaAtual.text()) {
+                                let nomeTabela = Object.keys(tabela.data())[0];
+                                let modelTabela = Object.values(tabela.data())[0]
+
+                                console.log(nomeTabela);
+                                console.log(modelTabela);
+                            }
+                        });
+
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
+                }
+            });
         } else if ($(this).text() == "Vizualizar") {
             console.log("Vizualizar");
         }
-        // console.log($(this).parent().parent().parent().find("h2").text());
     });
 
     $("body").on("click", "#delTrueExcluir", function () {
@@ -51,8 +69,10 @@ $(function () {
 
     $("body").on("click", "#delFalseExcluir", function () {
         $(".notificacao").fadeOut(500).remove();
-        notificacao(`
-        `)
+    });
+
+    $("body").on("click", "#sairEdit", function () {
+        $("#formTabela").fadeOut(500).remove();
     });
 
     function procurarTabelas(userId) {
@@ -112,5 +132,43 @@ $(function () {
 
     function notificacao(text) {
         $("body").append(text).fadeIn(500);
+    }
+
+    function adicionarTabelaSimples() {
+        $("body").append(`
+        <form autocomplete="off" id="formTabela" class="formTabela">
+            <div class="fundoDoFormulario">
+                <div>
+                    <h1>Nome da tabela: </h1>
+                    <input class="nomeTabela" type='text' name='nomeTabela' id='nomeTabela' maxlength="20">
+                </div>
+                <span class="conteudo estiloDeTabelaItem">
+                    <ul id="item">
+                        <li class="addItem">+ Novo item</li>
+                    </ul>
+                </span>
+                <a id="concluir" class="concluir" href="#">Concluir</a>
+                
+            </div>
+        </form>`);
+    }
+
+    function adicionarTabelaSecao() {
+        $("body").append(`
+        <form autocomplete="off" id="formTabela" class="formTabela">
+            <div class="fundoDoFormulario">
+                <div>
+                    <h1>Nome da tabela: </h1>
+                    <input class="nomeTabela" type='text' name='nomeTabela' id='nomeTabela' maxlength="20">
+                </div>
+                <span class="conteudo">
+                    <ul id="secao">
+                        <li id="addSecao">+ Nova seção</li>
+                    </ul>
+                </span>
+                <a id="concluir" class="concluir" href="#">Concluir</a>
+                <a id="sairEdit" class="sairEdit" href="#">X</a>
+            </div>
+        </form>`);
     }
 });
