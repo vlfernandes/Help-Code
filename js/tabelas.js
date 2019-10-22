@@ -18,17 +18,18 @@ $(function () {
     $("body").on("click", "a", function () {
         if ($(this).text() == "Excluir") {
             tabelaAtual = $(this).parent().parent().parent().find("h2");
+
             notificacao(`
-                <section class="notificacao">
-                    <div class="delete">
-                        <h2 class="titulo">Deseja excluir a tabela ${tabelaAtual.text()}?</h2>
-                        <span>
-                            <a id="delTrueExcluir" href="#">SIM</a>
+                    <section class="notificacao">
+                        <div class="delete">
+                            <h2 class="titulo">Deseja excluir a tabela ${tabelaAtual.text()}?</h2>
+                            <span>
                             <a id="delFalseExcluir" href="#">NÃO</a>
-                        </span>
-                    </div>
-                </section>
-            `);
+                            <a id="delTrueExcluir" href="#">SIM</a>
+                            </span>
+                        </div>
+                    </section>
+                `);
         } else if ($(this).text() == "Editar") {
             adicionarTabelaSecao()
             tabelaAtual = $(this).parent().parent().parent().find("h2");
@@ -68,11 +69,17 @@ $(function () {
     });
 
     $("body").on("click", "#delFalseExcluir", function () {
-        $(".notificacao").fadeOut(500).remove();
+        $(".notificacao").fadeOut(500)
+        setTimeout(() => {
+            $(".notificacao").remove()
+        }, 500);
     });
 
     $("body").on("click", "#sairEdit", function () {
-        $("#formTabela").fadeOut(500).remove();
+        $("#formTabela").fadeOut(500)
+        setTimeout(() => {
+            $("#formTabela").remove()
+        }, 500);
     });
 
     function procurarTabelas(userId) {
@@ -117,7 +124,10 @@ $(function () {
                 if (Object.keys(tabela.data())[0] == delTabela) {
                     db.collection("usuarios").doc(userId).collection("tabelas").doc(tabela.id).delete().then(function () {
                         $(local).remove();
-                        $(".notificacao").fadeOut(500).remove()
+                        $(".notificacao").fadeOut(500)
+                        setTimeout(() => {
+                            $(".notificacao").remove()
+                        }, 500);
                     }).catch(function (error) {
                         console.error("Error removing document: ", error);
                     });
