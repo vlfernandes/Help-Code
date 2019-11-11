@@ -332,7 +332,6 @@ $(function () {
             db.collection("usuarios").doc(userId).collection("tabelas").doc().set({
                 [nomeTabela]: tabela
             }).then(function () {
-
                 // db.collection("usuarios").doc(userId).collection("tabelas").get().then(function (tabelas) {
                 //     tabelas.forEach(tabela => {
                 //         if (Object.keys(tabela.data())[0] == nomeTabela) {
@@ -356,7 +355,7 @@ $(function () {
             }).catch(function (error) {
                 console.error("Error writing document: ", error);
             });
-        }, 750);
+        }, 500);
     }
 
     function colherNomeTabela() {

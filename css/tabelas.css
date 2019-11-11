@@ -170,6 +170,55 @@ main {
     background-color: #2488ff;
 }
 
+.sobrePage {
+    min-height: 100vh;
+    height: min-content !important;
+    position: absolute !important;
+}
+
+.sobrePage #closeView {
+    position: absolute;
+    top: 1rem;
+    right: 1.4rem;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.sobrePage .containerView {
+    position: relative;
+    height: min-content;
+    width: 40rem;
+    background-color: #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 5rem;
+    margin: 5rem 0;
+}
+
+.sobrePage .containerView .titulo {
+    color: #fff;
+    margin-bottom: 2rem;
+    font-size: 2.2rem
+}
+
+.sobrePage .containerView .subtitulo {
+    color: #fff;
+    align-self: flex-start;
+    margin: 1.2rem 0 1.2rem 1rem;
+}
+
+.sobrePage .containerView .subSUBtitulo {
+    color: #fff;
+    align-self: flex-start;
+    margin: 0 0 1rem 4.5rem;
+
+}
+
+
 
 @keyframes lds-eclipse {
     0% {

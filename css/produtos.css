@@ -48,7 +48,7 @@ main {
 
 .produto {
     width: 10rem;
-    height: 15rem;
+    height: 20rem;
     background-color: #57a4ff;
     display: flex;
     justify-content: flex-start;
@@ -140,6 +140,7 @@ main {
     align-items: center;
     border-radius: 1rem;
     padding: 5rem;
+    position: relative;
 }
 
 .notificacao .delete .titulo {
@@ -214,6 +215,47 @@ main {
     box-shadow: 0 4px 0 0 #57a4ff;
 }
 
+.containerqrCode {
+    background-color: #000;
+    padding: 1rem;
+    border-radius: 2rem;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fechaqrcode {
+    position: absolute;
+    right: 2rem;
+    top: 1.5rem;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #fff;
+}
+
+.divqrCode {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.baixarqrCode {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: #ddd;
+}
+
+.baixarqrCode:hover {
+    color: #57A4ff;
+}
+
+.tituloQRcode {
+    margin-top: 1rem;
+    margin-bottom: 0rem !important;
+}
 
 
 @media screen and (max-width: 1250px) {

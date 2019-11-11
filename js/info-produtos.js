@@ -10,6 +10,12 @@ $(function () {
             var produtoId = Object.values(tabela.data())[0];
             db.collection("usuarios").doc(userId).get().then(function (dataUser) {
                 db.collection("usuarios").doc(userId).collection("produtos").doc(produtoId).get().then(function (dataProduto) {
+                    // Construindo a tabela
+                    let tabelaSimples = true;
+                    let nomeTabela = Object.keys(dataProduto.data())[0];
+                    let estrutura = Object.values(dataProduto.data())[0];
+                    let titulos = [];
+                    let dados = [];
 
 
                     // Construindo a parte que mostra a empresa
@@ -36,12 +42,6 @@ $(function () {
 
 
 
-                    // Construindo a tabela
-                    let tabelaSimples = true;
-                    let nomeTabela = Object.keys(dataProduto.data())[0];
-                    let estrutura = Object.values(dataProduto.data())[0];
-                    let titulos = [];
-                    let dados = [];
 
                     Object.keys(estrutura).forEach(titulo => {
                         titulos.push(titulo);
@@ -87,6 +87,7 @@ $(function () {
                     }
 
                 }).catch(function (error) {
+                    console.log(error)
                     produtoNãoCadastrado("Esse produto foi removido do site");
                 });
             }).catch(function (error) {

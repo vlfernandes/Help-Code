@@ -93,16 +93,36 @@ body {
     padding-bottom: 6rem;
 }
 
-.containerInserirProduto .addSection {
+.containerInserirProduto .fimPage {
     position: absolute;
     bottom: 2rem;
-    left: calc(50vw - 23rem);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 40rem;
+}
+
+.containerInserirProduto .fimPage .addSection {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.containerInserirProduto .fimPage .concluir {
+    padding: 1rem 3rem;
+    background-color: #222;
+    color: #FFF;
+    border-radius: 1rem;
+    text-decoration: none;
+}
+
+.containerInserirProduto .fimPage .concluir:hover {
+    background-color: #ddd;
+    color: #000;
 }
 
 .containerInserirProduto .addSection h2 {
@@ -115,6 +135,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 12rem;
+    margin-bottom: 5rem;
 }
 
 .containerInserirProduto .divNomeDoProduto .titleNomeDoProduto {
@@ -486,6 +507,48 @@ body {
     padding: 0 0.3rem;
     height: 2rem;
     font-size: 1.5rem;
+}
+
+.notificacao .inserirImg {
+    cursor: pointer;
+    text-decoration: none;
+    color: #FFF;
+    padding: 1rem 3rem;
+    margin: 0 0 2rem 0;
+    background-color: #57A4ff;
+    border-radius: 1rem;
+}
+
+.notificacao .inserirImg:hover {
+    background-color: #2487ff77;
+}
+
+.containerqrCode {
+    background-color: #000;
+    padding: 1rem;
+    border-radius: 2rem;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divqrCode {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.baixarqrCode {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: #ddd;
+}
+
+.baixarqrCode:hover {
+    color: #57A4ff;
 }
 
 

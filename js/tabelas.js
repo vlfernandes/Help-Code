@@ -52,7 +52,29 @@ $(function () {
                 }
             });
         } else if ($(this).text() == "Vizualizar") {
-            console.log("Vizualizar");
+            notificacao(`
+                <section class="notificacao">
+                    <div id="load"></div>
+                </section>
+            `);
+
+            table = $(this).parent().find("img").attr("id").split("view")[1]
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    db.collection("usuarios").doc(user.uid).collection("tabelas").get().then(function (tabelas) {
+                        tabelas.forEach(tabela => {
+                            if (tabela.id == table) {
+                                setTimeout(() => {
+                                    vizualizarTabela(tabela.data())
+                                }, 500);
+                            }
+                        });
+
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
+                }
+            });
         }
     });
 
@@ -68,7 +90,7 @@ $(function () {
         });
     });
 
-    $("body").on("click", "#delFalseExcluir", function () {
+    $("body").on("click", "#delFalseExcluir, #closeView", function () {
         $(".notificacao").fadeOut(500)
         setTimeout(() => {
             $(".notificacao").remove()
@@ -111,7 +133,35 @@ $(function () {
     }
 
     function vizualizarTabela(tabela) {
-
+        $(".notificacao").remove();
+        notificacao(`
+            <section class="notificacao sobrePage">
+                <div class="containerView">
+                    <a id="closeView" href="#">X</a>
+                    <h2 class="titulo">${Object.keys(tabela)[0]}</h2>
+                </div>
+            </section>
+        `);
+        if (typeof Object.values(tabela)[0][0] == "string") {
+            Object.values(tabela)[0].forEach(value => {
+                $(".containerView").append(`
+                    <h2 class="subtitulo"> - ${value}</h2>
+                `);
+            })
+        } else {
+            console.log(Object.keys(Object.values(tabela)[0]))
+            Object.keys(Object.values(tabela)[0]).forEach((secoes, i) => {
+                $(".containerView").append(`
+                    <h2 class="subtitulo"> - ${secoes}</h2>
+                `);
+                Object.values(Object.values(tabela)[0])[i].forEach(itens => {
+                    $(".containerView").append(`
+                        <h2 class="subSUBtitulo"> - ${itens}</h2>
+                    `);
+                })
+            })
+        }
+        console.log()
     }
 
     function editarTabela(tabela) {
