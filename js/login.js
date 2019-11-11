@@ -1,5 +1,5 @@
 $(function () {
-    $(".btn1").click(function () {
+    $(".btnGoogle").click(function () {
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithRedirect(provider);
     });
