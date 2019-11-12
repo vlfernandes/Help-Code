@@ -142,7 +142,7 @@ $(function () {
                     </div>
                 </section>
             `);
-        urlProduto = `help-code.firebaseapp.com/html/info-produtos.html?${codProduto}`
+        urlProduto = `https://help-code.firebaseapp.com/html/info-produtos.html?${codProduto}`
         var qrcode = new QRCode("qrCode", {
             text: urlProduto,
             width: 256,

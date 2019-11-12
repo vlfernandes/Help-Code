@@ -1,6 +1,11 @@
 $(function () {
     var db = firebase.firestore();
-    var itemAtual = "";
+    var existeImg = false
+    var imgs;
+    var storage = firebase.storage();
+    // storage.ref("usuarios/123456L/logo_empresa/ADV 2.png").getDownloadURL().then(function (url) {
+    //     console.log(url);
+    // })
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             coletaTabelas(user.uid);
@@ -8,8 +13,6 @@ $(function () {
             window.location.href = ("../html/login.html");
         }
     });
-
-
 
     function coletaTabelas(userId) {
         db.collection("usuarios").doc(userId).collection("tabelas").get().then(function (tabelas) {
@@ -690,12 +693,51 @@ $(function () {
         $(".notificacao div").remove()
         $(".notificacao").append(`
             <div class="fundo edit">
-                <a class="inserirImg" href="#">Selecione algumas imagens do produto</a>
+                <label for="imagem_logo" class="inserirImg" href="#">Selecione algumas imagens do produto</label>
+                <input type="file" accept="image/*" class="imagem_logo" id="imagem_logo" multiple>
+                <h2 class="numImg">Nenhuma imagem selecionada</h2>
                 <span>
                     <a id="inserirImg" href="#">CONTINUAR</a>
                 </span>
             </div>
         `)
+    }
+
+
+    $(document).on('change', "#imagem_logo", function () {
+        var logo = $("#imagem_logo").prop("files");
+        if (logo.length === 0) {
+            /* NÂO ESCOLHEU NENHUMA IMAGEM */
+        } else {
+            for (let i = 0; i < logo.length; i++) {
+                if (!validarTipoArquivo(logo[i])) {
+                    console.log("invalido")
+                    $(".numImg").text("Nenhuma imagem selecionada");
+                    existeImg = false;
+                    return
+                }
+            }
+            console.log(logo)
+            existeImg = true;
+            $(".numImg").text("Numero de imagens selecionadas: " + logo.length);
+            // $(".slogan").attr("src", window.URL.createObjectURL(logo[0]));
+            imgs = logo;
+        }
+    });
+
+    var tiposDeArquivos = [
+        'image/jpeg',
+        'image/pjpeg',
+        'image/png'
+    ]
+
+    function validarTipoArquivo(arquivo) {
+        for (var i = 0; i < tiposDeArquivos.length; i++) {
+            if (arquivo.type === tiposDeArquivos[i]) {
+                return true;
+            }
+        }
+        return false;
     }
 
     function escreverProduto(userId, nomeDoProduto, produto) {
@@ -712,7 +754,22 @@ $(function () {
                 db.collection("produtos").add({
                     [userId]: id
                 }).then(function (aux) {
-                    geraQRCode(aux.id)
+                    if (existeImg) {
+                        var storageRef = storage.ref();
+                        for (let i = 0; i < imgs.length; i++) {
+                            if (i == imgs.length - 1) {
+                                storageRef.child('usuarios/' + userId + '/produtos/' + id + '/' + i).put(imgs[i]).then(function () {
+                                    geraQRCode(aux.id)
+                                });
+                            } else {
+                                storageRef.child('usuarios/' + userId + '/produtos/' + id + '/' + i).put(imgs[i]).then(function () {
+                                    console.log("Concluiu inseção")
+                                });
+                            }
+                        }
+                    } else {
+                        geraQRCode(aux.id)
+                    }
                 }).catch(function (error) {
                     console.error("nao cadastrou ", error);
                 });
@@ -727,7 +784,6 @@ $(function () {
     }
 
     function geraQRCode(codProduto) {
-        console.log(codProduto)
         $(".notificacao div").remove()
         $(".notificacao").append(`
             <div class="fundo edit">
@@ -743,7 +799,7 @@ $(function () {
                 </span>
             </div>
         `)
-        urlProduto = `help-code.firebaseapp.com/html/info-produtos.html?${codProduto}`
+        urlProduto = `https://help-code.firebaseapp.com/html/info-produtos.html?${codProduto}`
         var qrcode = new QRCode("qrCode", {
             text: urlProduto,
             width: 256,

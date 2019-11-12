@@ -514,7 +514,6 @@ body {
     text-decoration: none;
     color: #FFF;
     padding: 1rem 3rem;
-    margin: 0 0 2rem 0;
     background-color: #57A4ff;
     border-radius: 1rem;
 }
@@ -522,6 +521,17 @@ body {
 .notificacao .inserirImg:hover {
     background-color: #2487ff77;
 }
+
+.notificacao .numImg {
+    margin: 2rem 0;
+    color: #FFF;
+}
+
+.imagem_logo {
+    display: none;
+}
+
+.concluir_invalido {}
 
 .containerqrCode {
     background-color: #000;
