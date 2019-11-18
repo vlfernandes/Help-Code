@@ -20,8 +20,11 @@ $(function () {
 
     function procurarProdutos(userId) {
         db.collection("usuarios").doc(userId).collection("produtos").get().then(function (produtos) {
-            console.log(produtos);
+
             var qrCode;
+            if (produtos.size == 0) {
+                $(".lds-css").fadeOut("slow");
+            }
             produtos.forEach(produto => {
                 db.collection("produtos").get().then(function (pros) {
                     pros.forEach(p => {

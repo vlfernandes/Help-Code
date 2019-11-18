@@ -1,6 +1,8 @@
 $(function () {
     var db = firebase.firestore();
+    var storage = firebase.storage();
     var parametroDaUrl = window.location.href.split("?")[1];
+    var imgs = []
 
     if (parametroDaUrl == undefined || parametroDaUrl == "") {
         produtoNãoCadastrado("Houve uma falha na procura do produto");
@@ -25,7 +27,7 @@ $(function () {
                                 <img class="logoEmpresa" src="../img/logo.png" alt="">
                             </div>
                             <div class="informacoes">
-                                <h1 id="nome" class="nome">nome</h1>
+                                <h1 id="nome" class="nome">Nome da empresa</h1>
                                 <h1 id="telefone" class="outrosText">telefone</h1>
                                 <h1 id="email" class="outrosText">email</h1>
                                 <h1 id="endereco" class="outrosText">endereco</h1>
@@ -33,15 +35,12 @@ $(function () {
                         </header>
                     `)
                     let dadosUser = dataUser.data();
-                    $("#nome").text(`${dadosUser.nome}`)
-                    $("#telefone").text(`Telefone: ${dadosUser.telefone}`)
-                    $("#email").text(`Email: ${dadosUser.email}`)
-                    $("#endereco").text(`Endereço: ${dadosUser.endereco}`)
-                    $(".lds-css").fadeOut("slow");
-
-
-
-
+                    if (dadosUser != undefined) {
+                        $("#nome").text(`${dadosUser.nome}`)
+                        $("#telefone").text(`Telefone: ${dadosUser.telefone}`)
+                        $("#email").text(`Email: ${dadosUser.email}`)
+                        $("#endereco").text(`Endereço: ${dadosUser.endereco}`)
+                    }
 
                     Object.keys(estrutura).forEach(titulo => {
                         titulos.push(titulo);
@@ -86,8 +85,9 @@ $(function () {
                         });
                     }
 
+                    let i = 0;
+                    procuraImgs(i, userId, produtoId)
                 }).catch(function (error) {
-                    console.log(error)
                     produtoNãoCadastrado("Esse produto foi removido do site");
                 });
             }).catch(function (error) {
@@ -96,6 +96,33 @@ $(function () {
         }).catch(function (error) {
             produtoNãoCadastrado("Produto não cadastrado");
         });
+    }
+
+    function procuraImgs(i, userId, produtoId) {
+        storage.ref("usuarios/" + userId + "/produtos/" + produtoId + "/" + i).getDownloadURL().then(function (url) {
+            imgs.push(url)
+            i++;
+            procuraImgs(i, userId, produtoId)
+        }).catch(function (error) {
+            console.log("énois" + error)
+            console.log(imgs)
+            if (imgs.length > 0) {
+                $("#tabela").append(`
+                    <div class="bxslider"></div>
+                `)
+                imgs.forEach(img => {
+                    $(".bxslider").append(`
+                        <div class="containerImg"><img src="${img}"></div>
+                    `)
+                });
+                $(".bxslider").bxSlider({
+                    mode: 'fade',
+                    captions: true,
+                    slideWidth: 600
+                });
+            }
+            $(".lds-css").fadeOut("slow");
+        })
     }
 
     function produtoNãoCadastrado(frase) {
@@ -112,9 +139,5 @@ $(function () {
             </section>
         `)
         $(".lds-css").fadeOut("slow");
-    }
-
-    function printaTabelaSecao() {
-
     }
 })
