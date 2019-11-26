@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+.fundo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/login/fundo.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+.campo {
+    /* margin: 10rem 0 0 0; */
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 20rem;
+    height: 30rem;
+    ;
+    background: rgba(34, 34, 34, 0.281);
+
+}
+
+.info {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 20rem;
+    height: 10rem;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2rem;
+}
+
+span {
+    margin: 1rem 0 0 0;
+    display: flex;
+    align-items: center;
+    width: 14rem;
+    background: #fff;
+    border-radius: 3rem;
+}
+
+.img {
+    width: 1.8rem;
+}
+
+.imgf {
+    width: 1.8rem;
+}
+
+.texto {
+    text-decoration: none;
+    margin: 0 0 0 1rem;
+}
+
+.texto1 {
+    text-decoration: none;
+    margin: 0 0 0 1rem;
+    color: #000;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+
+.btnGoogle:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.btnFace:hover {
+    background-color: #3b5998;
+    color: #fff;
+}
+
+.btnvolta:hover {
+    background-color: #2488ff;
+    color: #000;
+}
+
+.btn1 {
+    width: 14rem;
+    border-radius: 1rem;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.logo {
+    width: 8rem;
+    margin: 1rem 0 0 3rem;
+    ;
+}
+
+
+
+
+
+
+
+
+
+@keyframes lds-eclipse {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes lds-eclipse {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.lds-css {
+    height: 100vh;
+    width: 100vw;
+    background-color: #222;
+    position: fixed;
+    z-index: 7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lds-css div {
+    -webkit-animation: lds-eclipse 0.9s linear infinite;
+    animation: lds-eclipse 0.9s linear infinite;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    box-shadow: 0 4px 0 0 #57a4ff;
+}
+
+.lds-css article {
+    font-size: 2.2rem;
+    margin-top: 2rem;
+    color: #ddd;
+}
+
+.lds-css article:after {
+    content: "";
+    display: block;
+    height: 0.2rem;
+    width: 7rem;
+    background-color: #57A4ff;
+    margin: 1rem auto 0;
+}

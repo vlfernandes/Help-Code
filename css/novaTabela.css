@@ -1,0 +1,480 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url("../img/fundoAddTabela.svg");
+    background-color: #57A4FF;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100vmax auto;
+}
+
+.escolherTabela,
+.tipoTabela,
+.formTabela {
+    height: calc(100vh - 3rem);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    min-height: 30rem;
+}
+
+.escolherTabela,
+.tipoTabela,
+.formTabela {
+    background-color: transparent;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* ////////////////////////////// TABELA MODELO //////////////////////////////////////// */
+
+.escolherTabelaBloco {
+    border: 0.2rem solid #222;
+}
+
+.escolherTabela div {
+    height: min-content;
+    width: 40rem;
+    padding: 1.5rem;
+    background-color: #57A4FF;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.escolherTabela div .tabelasModelos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0;
+}
+
+.escolherTabela div .tabelasModelos div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: min-content;
+    padding: 0;
+}
+
+.escolherTabela div .tabelasModelos div div a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    padding: 0.7rem 1rem;
+    margin: 0.5rem 0.5rem;
+    border-radius: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+.escolherTabela div .tabelasModelos div div .custom {
+    color: #000;
+    background-color: #fff;
+}
+
+
+/* ////////////////////////////// TIPO DE TABELA //////////////////////////////////////// */
+.tipoTabela {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 25rem;
+}
+
+.tipoTabela .conteudo {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(#000, #444);
+    border-radius: 1rem;
+    width: 43vw;
+    padding: 1.5rem 0 0 0;
+}
+
+.tipoTabela .conteudo h1 {
+    color: #DDD;
+}
+
+.tipoTabela img {
+    width: 20vw;
+}
+
+.tipoTabela .conteudo .divisao {
+    height: 10rem;
+    width: 0.3rem;
+    background-color: #ddd;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+}
+
+.tipoTabela .conteudo div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+
+}
+
+.tipoTabela .conteudo div div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+    padding: 1.5rem 0 0 0;
+}
+
+.tipoTabela .conteudo div div:hover {
+    cursor: pointer;
+}
+
+.tipoTabela .conteudo div div a {
+    text-align: center;
+    text-decoration: none;
+    color: #DDD;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+
+
+
+
+
+
+/* ////////////////////////////// FORMULARIOS DA TABELA //////////////////////////////////////// */
+.formTabela {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 3rem);
+    height: min-content;
+}
+
+.formTabela div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.formTabela div h1 {
+    margin-top: 3rem;
+}
+
+.formTabela div .nomeTabela {
+    border-width: 0;
+    outline: none;
+    font-size: 1.2rem;
+    border: 0.1rem solid #000;
+    border-radius: 0.5rem;
+    padding: 0 0.2rem;
+    background-color: transparent;
+    color: #000;
+    text-align: center;
+    height: 2rem;
+    margin-top: 3.2rem;
+}
+
+.formTabela .fundoDoFormulario {
+    width: fit-content;
+    height: min-content;
+    padding: 0 3rem;
+    margin-top: 3rem;
+    background-color: rgba(200, 200, 200, 0.3);
+    border-radius: 1rem;
+    flex-direction: column;
+}
+
+.formTabela .conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    background-color: transparent;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 1rem 0;
+    padding: 2rem 0;
+    width: 28rem;
+}
+
+.formTabela .estiloDeTabelaItem {
+    padding: 0;
+    margin: 0;
+}
+
+.formTabela .conteudo ul {
+    margin: 0 3rem;
+    list-style: none;
+    padding-bottom: 2.5rem;
+    position: relative;
+}
+
+.formTabela .conteudo ul li:first-child {
+    position: absolute;
+    bottom: 0.7rem;
+    padding: 0.5rem 0.8rem 0 0;
+    width: max-content;
+    cursor: pointer;
+}
+
+.formTabela .conteudo ul li div {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.formTabela .conteudo ul img {
+    height: 1.5rem;
+    padding: 0.5rem 1rem 0 0;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    margin-top: 0.6rem;
+}
+
+.formTabela .conteudo ul li input {
+    outline: none;
+    border: 0.1rem solid #2488ff;
+    border-radius: 0.5rem;
+    padding: 0 0.2rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.formTabela .concluir {
+    align-self: flex-end;
+    color: #FFF;
+    text-decoration: none;
+    background-color: #222;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.formTabela .concluir:hover {
+    color: #222;
+    background-color: #FFF;
+}
+
+/* //////////////// Gera notificação de erro //////////////////////////*/
+.notificacao {
+    background-color: rgba(123, 123, 123, 0.9);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notificacao .bloco {
+    height: min-content;
+    width: 40rem;
+    background-color: #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 5rem;
+}
+
+.notificacao .bloco .titulo {
+    margin-bottom: 4rem;
+    width: 100%;
+    text-align: center;
+    color: #FFF;
+}
+
+.notificacao .bloco span {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notificacao .bloco span a {
+    text-decoration: none;
+    color: #FFF;
+    width: 7rem;
+    padding: 1rem 3rem;
+    margin: 0 1rem;
+    background-color: #57A4ff;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.notificacao .bloco span a:hover {
+    background-color: #2488ff;
+}
+
+.escondido {
+    display: none !important;
+}
+
+@keyframes lds-eclipse {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes lds-eclipse {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+#load {
+    -webkit-animation: lds-eclipse 0.9s linear infinite;
+    animation: lds-eclipse 0.9s linear infinite;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    box-shadow: 0 4px 0 0 #57a4ff;
+}
+
+/*///////////////////////////////////// PARA TABLET ////////////////////////////////////*/
+@media screen and (max-width: 1024px) {
+
+    /* ////////////////////////////// TIPO DE TABELA //////////////////////////////////////// */
+    .tipoTabela .conteudo {
+        width: 73vw;
+    }
+
+    .tipoTabela img {
+        width: 35vw;
+    }
+
+    /* ////////////////////////////// FORMULARIOS DA TABELA //////////////////////////////////////// */
+    .formTabela .fundoDoFormulario {
+        padding: 0 2rem;
+    }
+
+    .formTabela .conteudo ul li input {
+        margin-top: 1.2rem;
+    }
+}
+
+
+
+
+/*///////////////////////////////////// PARA CELULAR ////////////////////////////////////*/
+@media screen and (max-width: 768px) {
+
+    /* ////////////////////////////// TABELA MODELO //////////////////////////////////////// */
+    .escolherTabela div {
+        width: 80vw;
+    }
+
+    .escolherTabela div .tabelasModelos div {
+        flex-direction: column;
+    }
+
+    .escolherTabela div .tabelasModelos div div {
+        flex-direction: row;
+    }
+
+    .escolherTabela div .tabelasModelos div div a {
+        padding: 0.7rem 0.3rem;
+    }
+
+    /* ////////////////////////////// TIPO DE TABELA //////////////////////////////////////// */
+    .tipoTabela .conteudo {
+        width: 95vw;
+    }
+
+    .tipoTabela img {
+        width: 47.5vw;
+    }
+
+    .tipoTabela .conteudo div div a {
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* ////////////////////////////// FORMULARIOS DA TABELA //////////////////////////////////////// */
+    .formTabela div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .formTabela div .nomeTabela {
+        height: 2rem;
+        margin-top: 0;
+    }
+
+    .formTabela .conteudo {
+        width: 90vw;
+    }
+
+    .formTabela .conteudo ul {
+        margin: 0 1.5rem;
+    }
+
+    /* ////////////////////////////// Notificação //////////////////////////////////////// */
+    .notificacao .bloco {
+        width: 90vw;
+        height: max-content;
+        padding: 3rem 1rem;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .notificacao .bloco span {
+        flex-direction: column;
+    }
+
+    .notificacao .bloco span a {
+        margin: 1rem 0;
+    }
+}

@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+body {
+
+    background-color: #fff;
+    font-family: 'Nunito', sans-serif;
+    /* background-color: #ececec;  */
+    background-image: url(../img/fundo.svg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.carregando {
+    display: flex !important;
+}
+
+.bloco {
+
+    margin: 3rem 0 0 0;
+    height: 33rem;
+    display: flex;
+    width: 45rem;
+    top: 3rem;
+    position: relative;
+    background: rgb(0, 0, 0, 0.1);
+    border-radius: 2rem;
+    -webkit-box-shadow: 25px 17px 23px -4px rgba(0, 0, 0, 0.47);
+    -moz-box-shadow: 25px 17px 23px -4px rgba(0, 0, 0, 0.47);
+    box-shadow: 0 17px 23px -4px rgba(0, 0, 0, 0.47);
+
+}
+
+.bloco2 {
+
+    height: 17rem;
+    width: 45rem;
+    top: 3rem;
+    margin: 3rem 0 0 0;
+    display: flex;
+    position: relative;
+    border-radius: 2rem;
+    background: rgb(0, 0, 0, 0.1);
+    -webkit-box-shadow: 25px 17px 23px -4px rgba(0, 0, 0, 0.47);
+    -moz-box-shadow: 25px 17px 23px -4px rgba(0, 0, 0, 0.47);
+    box-shadow: 0 17px 23px -4px rgba(0, 0, 0, 0.47);
+
+}
+
+input:valid {
+
+    background: white;
+
+}
+
+input:invalid {
+
+    background: #fff;
+    color: #000;
+
+}
+
+.cimg {
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 20rem;
+    border-radius: 2rem;
+
+}
+
+.img {
+
+    margin: 1rem 0 0 0;
+    max-width: 17rem;
+    max-height: 17rem;
+    min-height: 13rem;
+    min-width: 13rem;
+}
+
+.imgTrocada {
+
+    border-radius: 2rem;
+
+}
+
+.img2 {
+
+    margin: 1rem 0 0 0;
+    max-width: 17rem;
+    max-height: 17rem;
+    min-height: 13rem;
+    min-width: 13rem;
+
+}
+
+.campo {
+
+    outline: none;
+    padding: 0.5rem;
+    width: 15rem;
+    border: 0.1rem solid #222;
+    border-radius: 2rem;
+}
+
+.campo1 {
+
+    outline: none;
+    padding: 0.5rem;
+    width: 15rem;
+    border: 0.1rem solid #222;
+    border-radius: 1rem;
+}
+
+
+.info {
+
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.btn1 {
+
+    border-radius: 1rem;
+    padding: 1rem;
+    text-decoration: none;
+    text-align: center;
+    background-color: #222;
+    color: #F5F5F5;
+
+}
+
+.btn1:hover {
+
+    background-color: #2488FF;
+    color: #F5F5F5;
+
+}
+
+.btn2 {
+
+    border-radius: 1rem;
+    padding: 1rem;
+    text-decoration: none;
+    text-align: center;
+    background-color: #222;
+    color: #F5F5F5;
+
+}
+
+.btn2:hover {
+
+    background-color: #2488FF;
+    color: #F5F5F5;
+
+}
+
+.buscar {
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 21.8rem;
+    width: 20rem;
+    border-radius: 2rem;
+
+}
+
+.logo {
+
+    margin: 0 0 0 5rem;
+    width: 25%;
+
+}
+
+.teste {
+
+    margin: 10rem 0 0 0;
+
+}
+
+.arq {
+
+    visibility: hidden;
+
+}
+
+
+/* media para os de <= 768 */
+
+@media screen and (max-width: 768px) {
+
+    .bloco {
+
+        margin: 5rem;
+        align-items: center;
+        flex-direction: column;
+        width: 21rem;
+        height: 59rem;
+
+    }
+
+    .bloco2 {
+
+        margin: 5rem;
+        align-items: center;
+        flex-direction: column;
+        width: 21rem;
+        height: 30rem;
+
+    }
+
+    .campo {
+
+        margin: 0.5rem 0 2rem 0;
+
+    }
+
+    .campo1 {
+
+        margin: 0.5rem 0 2rem 0;
+
+    }
+
+
+    .info {
+
+        margin: 0 0 0 0;
+
+    }
+
+
+    .btn1 {
+
+        margin: 0 0 1rem 1rem;
+
+    }
+
+    .btn2 {
+
+        margin: 0rem 0 1rem 0.5rem;
+    }
+
+    .logo {
+
+        margin: 0 0 0 2rem;
+
+    }
+
+    .img {
+
+        width: 20rem;
+        margin: 0.5rem 0 0 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+    }
+
+    .img2 {
+
+        margin: 0.5rem 0 0 0;
+
+    }
+
+}
+
+/* media para os de <= 360 */
+
+
+@media screen and (max-width: 360px) {
+
+    .bloco {
+
+        margin: 5rem;
+        align-items: center;
+        flex-direction: column;
+        width: 17rem;
+        height: 59rem;
+
+    }
+
+    .bloco2 {
+
+        margin: 5rem;
+        align-items: center;
+        flex-direction: column;
+        width: 17rem;
+        height: 30rem;
+
+    }
+
+
+    .campo {
+
+        margin: 0.5rem 0 1.5rem 0;
+
+    }
+
+    .campo1 {
+
+        margin: 0.5rem 0 1.5rem 0;
+
+    }
+
+    .info {
+
+        margin: 2rem 0 0 0;
+
+    }
+
+
+    .btn1 {
+
+        margin: 1rem 0 1rem 0.4rem;
+
+    }
+
+    .btn2 {
+
+        margin: 0 0 1rem 0.4rem;
+
+    }
+
+    .logo {
+
+        margin: 0 0 0 2rem;
+
+    }
+
+    .img {
+
+        width: 15rem;
+        margin: 0.5rem 0 0 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+    }
+
+    .img2 {
+
+        width: 15rem;
+        margin: 0.5rem 0 0 0;
+
+    }
+
+}
+
+/* media para os de <= 411 */
+
+@media screen and (max-width: 411px) {
+
+    .bloco {
+
+        margin: 5rem;
+        align-items: center;
+        flex-direction: column;
+        width: 17rem;
+        height: 59rem;
+
+    }
+
+    .bloco2 {
+
+        margin: 5rem;
+        align-items: center;
+        flex-direction: column;
+        width: 17rem;
+        height: 30rem;
+
+    }
+
+
+    .campo {
+
+        margin: 0.5rem 0 1.5rem 0;
+
+    }
+
+    .campo1 {
+
+        margin: 0.5rem 0 1.5rem 0;
+
+    }
+
+    .info {
+
+        margin: 2rem 0 0 0;
+
+    }
+
+
+    .btn1 {
+
+        margin: 1rem 0 1rem 0.4rem;
+
+    }
+
+    .btn2 {
+
+        margin: 0 0 1rem 0.4rem;
+
+    }
+
+    .logo {
+
+        margin: 0 0 0 2rem;
+
+    }
+
+    .img {
+
+        width: 15rem;
+        margin: 0.5rem 0 0 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+    }
+
+    .img2 {
+
+        width: 15rem;
+        margin: 0.5rem 0 0 0;
+
+    }
+
+}
+
+input,
+textarea {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem
+}

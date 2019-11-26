@@ -1,0 +1,975 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#myVideo {
+    position: absolute;
+    z-index: -2;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.menu {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 3rem;
+    background-color: #222;
+    border-bottom: 0.1875rem solid #222;
+    border-top: 0.1875rem solid #222;
+}
+
+.menu ul {
+    list-style: none;
+    position: relative;
+}
+
+.menu ul li {
+    width: 9.375rem;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.menu a {
+    padding: 0.9375rem;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    background-color: #222;
+    color: #F5F5F5;
+}
+
+.menu li:last-child {
+    float: right;
+
+}
+
+.Logo {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 3.5rem;
+
+
+}
+
+.Informacao {
+    display: flex;
+    justify-content: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: min-content;
+    min-height: 100vh;
+    /*    min-height: 31.25rem;*/
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Informacao:nth-of-type(1) .HelpCode {
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    align-items: center;
+    color: #FFF;
+}
+
+.Informacao:nth-of-type(1) .Subtitulo {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    text-align: center;
+    width: 40rem;
+}
+
+.Informacao:nth-of-type(1) .Botoes {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.9375rem;
+    align-items: center;
+    width: 31.25rem;
+    justify-content: space-evenly;
+}
+
+.Informacao:nth-of-type(1) .Iniciar {
+    display: flex;
+    color: #FFF;
+    width: 12.5rem;
+    height: 3rem;
+    border-radius: 1.25rem;
+    font-weight: bold;
+    padding: 0.375rem 0.625rem;
+    font-size: 1.5625rem;
+    text-decoration: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /*                  background-color: #FFF;  */
+    background-color: #222;
+}
+
+.Informacao:nth-of-type(1) .Instrucoes {
+    display: flex;
+    color: #222;
+    height: 3rem;
+    width: 12.5rem;
+    cursor: pointer;
+    border-radius: 1.25rem;
+    font-weight: bold;
+    padding: 0.375rem 0.625rem;
+    text-decoration: none;
+    flex-direction: column;
+    justify-content: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.5625rem;
+    background-color: #FFF;
+}
+
+
+/*---------------------------------------------------------------------------------*/
+/*Efeito sublinhado Menu*/
+.menu a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.1875rem;
+    bottom: 0;
+    left: 0;
+    background-color: #2488ff;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.menu a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+/*---------------------------------------------------------------------------------*/
+
+.Informacao:nth-of-type(3) {
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 100vh;
+    height: min-content;
+    /*    min-height: 100vh;*/
+    border-top: solid 0.3125rem #FFF;
+}
+
+.Informacao:nth-of-type(3) .Retangulo {
+    display: flex;
+    flex-direction: row;
+    border-radius: 1.25rem;
+    justify-content: space-evenly;
+    /*separa igualmente*/
+    /*                justify-content: space-around;  deixa um espaço*/
+    /*                justify-content: space-between;     Encosta os cantos*/
+    align-items: center;
+    width: 80vw;
+    height: 31.25rem;
+    background-color: #222;
+}
+
+.Informacao:nth-of-type(3) .PassoAPasso {
+    font-size: 3.125rem;
+
+}
+
+.Informacao:nth-of-type(3) .PassoAPasso:after {
+    content: "";
+    display: block;
+    height: 0.3125rem;
+    width: 100px;
+    background-color: #2488FF;
+    margin: 1.25rem auto 0;
+}
+
+.Informacao:nth-of-type(3) .Quadrado {
+    display: flex;
+    border-radius: 1.25rem 1.25rem 1.25rem 1.25rem;
+    flex-direction: column;
+    justify-content: row;
+    align-items: center;
+    width: 18.75rem;
+    height: 18.75rem;
+    background-color: #FFF;
+}
+
+.TextoPasso1 {
+    margin-top: 3.125rem;
+    font-size: 1.5rem;
+}
+
+.TextoPasso2 {
+    text-align: center;
+    margin-top: 3.125rem;
+    font-size: 1.5rem;
+    width: 18.75rem;
+}
+
+.TextoPasso3 {
+    text-align: center;
+    margin-top: 3.125rem;
+    font-size: 1.5rem;
+    width: 19.0625rem;
+
+}
+
+.ImagemPasso {
+    width: 18.75rem;
+    height: 11.25rem;
+
+}
+
+
+.Informacao:nth-of-type(1) .Iniciar:hover {
+    color: #FFF;
+    background-color: #2488FF;
+    /*                background-image:linear-gradient(#bcf2f7, #6dc9f7, #27aef2);*/
+
+}
+
+.Informacao:nth-of-type(1) .Instrucoes:hover {
+    color: #FFF;
+    background-color: #2488FF;
+    /*                  background-image: linear-gradient(#bcf2f7, #6dc9f7, #27aef2);*/
+}
+
+.informacao:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #DDD;
+    /*                  width: 100%;*/
+    /*    min-height: 31.25rem;*/
+    /*                  max-height: 500px;*/
+    border-top: solid 0.3125rem #DDD;
+    min-height: 100vh;
+    height: min-content;
+    min-height: 100vh;
+}
+
+.Informacao:nth-of-type(2) .TextoFuncionamento {
+    font-size: 3.125rem;
+}
+
+.Informacao:nth-of-type(2) .TextoFuncionamento:after {
+    content: "";
+    display: block;
+    height: 0.3125rem;
+    width: 6.25rem;
+    background-color: #2488FF;
+    margin: 1.25rem auto 0;
+}
+
+.Informacao:nth-of-type(4) {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: #DDD;
+    height: min-content;
+    min-height: 100vh;
+    /*    min-height: 100vh;*/
+    border-top: solid 0.3125rem #DDD;
+}
+
+.Informacao:nth-of-type(4) .TextoTabelas {
+    font-size: 50px;
+
+}
+
+.Informacao:nth-of-type(4) .TextoTabelas:after {
+    content: "";
+    display: block;
+    height: 0.3125rem;
+    width: 6.25rem;
+    background-color: #2488FF;
+    margin: 1.25rem auto 0;
+}
+
+.Informacao:nth-of-type(4) .ConteudoTabelas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /*separa igualmente*/
+    align-items: center;
+    width: 80vw;
+    border-radius: 1.25rem;
+    height: 31.25rem;
+    background-color: #222;
+}
+
+.Informacao:nth-of-type(4) .Tabelas {
+    background-color: #57A4FF;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.25rem;
+    justify-content: row;
+    align-items: center;
+    width: 21.875rem;
+    height: 18.75rem;
+}
+
+.ImagemPasso {
+    overflow: hidden;
+    border-radius: 1.25rem 1.25rem 0rem 0rem;
+    width: 18.75rem;
+}
+
+.Titulo1 {
+    font-weight: bold;
+    text-align: center;
+    padding: 0.625rem;
+    font-size: 2rem;
+    color: #FFF;
+}
+
+.Titulo1:after {
+    content: "";
+    display: block;
+    height: 0.125rem;
+    width: 12.5rem;
+    background-color: #DDD;
+    margin: 0.625rem auto 0;
+}
+
+.ConteudoTabela1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 20px;
+    height: 200px;
+}
+
+.Conteudo1 {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.Conteudo2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.Conteudo3 {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.Conteudo2:after {
+    content: "";
+    display: block;
+    height: 0.125rem;
+    width: 12.5rem;
+    background-color: #DDD;
+    margin: 0.625rem auto 0;
+}
+
+.Valor1 {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.BotaoTabelaUm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 6.25rem;
+    border-radius: 1.25rem;
+}
+
+.Registrar1:hover {
+    color: #222;
+    background-color: #DDD;
+}
+
+.Registrar2:hover {
+    color: #222;
+    background-color: #DDD;
+}
+
+.Registrar1 {
+    display: flex;
+    color: #222;
+    width: 100%;
+    height: 100%;
+    border-radius: 0rem 0rem 1.25rem 1.25rem;
+    font-weight: bold;
+    font-size: 1.5625rem;
+    text-decoration: none;
+    flex-direction: column;
+    justify-content: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #FFF;
+}
+
+/*----------------------------------------------------------*/
+.Titulo2 {
+    font-weight: bold;
+    text-align: center;
+    padding: 0.625rem;
+    font-size: 2rem;
+    color: #FFF;
+}
+
+.Titulo2:after {
+    content: "";
+    display: block;
+    height: 0.125rem;
+    width: 12.5rem;
+    background-color: #DDD;
+    margin: 0.625rem auto 0;
+}
+
+.ConteudoTabela2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.9375rem;
+    /*    width: 18.75rem;*/
+    height: 12.5rem;
+}
+
+.Conteudo1 {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.Conteudo2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.Conteudo3 {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.Conteudo3:after {
+    content: "";
+    display: block;
+    height: 0.125rem;
+    width: 12.5rem;
+    background-color: #DDD;
+    margin: 0.625rem auto 0;
+}
+
+.Valor2 {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.BotaoTabelaDois {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 6.25rem;
+    background-color: #222;
+    border-radius: 1.25rem;
+}
+
+.Registrar2 {
+    display: flex;
+    color: #222;
+    border-radius: 1.25rem;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    font-size: 1.5625rem;
+    text-decoration: none;
+    flex-direction: column;
+    justify-content: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #FFF;
+    border-radius: 0rem 0rem 1.25rem 1.25rem;
+}
+
+.Estrela:hover {
+    animation: bounce 1s;
+}
+
+.Quadrado:hover {
+    animation: bounce 2s;
+}
+
+.carro:hover {
+    animation: bounce 2s;
+
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    60%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+
+        -webkit-transform: translateY(-1.25rem);
+        transform: translateY(-1.25rem);
+    }
+
+    80% {
+        -webkit-transform: translateY(-0.625rem);
+        transform: translateY(-0.625rem);
+    }
+}
+
+.carro {
+    width: 100%;
+}
+
+carro:hover {
+    animation: bounce 2s;
+}
+
+.Rodape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 6.25rem;
+    padding: 3%, 4%;
+    background-color: #222;
+}
+
+.TextoRodape {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 3.125rem;
+    width: 28rem;
+}
+
+.EspacoLogo {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 6.25rem;
+    height: 3.125rem;
+}
+
+.EspacoCarro {
+    display: flex;
+    align-items: center;
+    height: 600px;
+    width: 1000px;
+}
+
+.LogoRodape {
+    width: 2.5rem;
+    height: 2.5rem;
+    filter: grayscale(100%);
+}
+
+.LogoRodape:hover {
+    filter: drop-shadow(0rem 0rem 0rem blue);
+    transition: 5s;
+}
+
+.Copyright {
+    align-items: center;
+    color: #DDD;
+}
+
+
+@media all and (min-width:360px) and (max-width:1025px) {
+    .Logo {
+        height: 4rem;
+        width: 4rem;
+    }
+
+    .menu {
+        height: 8rem;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .menu .entrar {
+        font-size: 2.5rem;
+    }
+
+    .menu .funcionamento {
+        display: none;
+    }
+
+    .menu .instrucoes {
+        display: none;
+    }
+
+    .menu .tabelas {
+        display: none;
+    }
+
+    .menu .paginaInicial {
+        display: none;
+    }
+
+    .Informacao:nth-of-type(1) .HelpCode {
+        font-size: 4rem;
+    }
+
+    .Informacao:nth-of-type(1) .Subtitulo {
+        font-size: 2.5rem;
+    }
+
+    .Botoes {
+        font-size: 2rem;
+    }
+
+    .Informacao:nth-of-type(1) .Botoes {
+        width: 45rem;
+        justify-content: space-evenly;
+    }
+
+    .Informacao:nth-of-type(1) .Iniciar {
+        width: 20rem;
+        height: 5rem;
+        font-size: 3rem;
+    }
+
+    .Informacao:nth-of-type(1) .Instrucoes {
+        width: 20rem;
+        font-size: 3rem;
+        height: 5rem;
+    }
+
+    .Informacao:nth-of-type(2) {
+        height: min-content;
+    }
+
+    .Informacao:nth-of-type(2) .TextoFuncionamento {
+        font-size: 4rem;
+    }
+
+    .Informacao:nth-of-type(3) {
+        min-height: 100vh;
+        height: min-content;
+        flex-direction: column;
+    }
+
+    .Informacao:nth-of-type(3) .Retangulo {
+        flex-direction: column;
+        height: 90rem;
+
+    }
+
+    .Informacao:nth-of-type(3) .Quadrado {
+        width: 500px;
+        height: 400px;
+    }
+
+    .Informacao:nth-of-type(3) .ImagemPasso {
+        width: 500px;
+        height: 300px;
+    }
+
+    .Informacao:nth-of-type(1) {
+        height: min-content;
+        min-height: 100vh;
+    }
+
+    .Informacao:nth-of-type(3) .TextoPasso1 {
+        margin-top: 1.5625rem;
+        font-size: 2.3rem;
+    }
+
+    .Informacao:nth-of-type(3) .TextoPasso2 {
+        margin-top: 1.5625rem;
+        font-size: 2.3rem;
+    }
+
+    .Informacao:nth-of-type(3) .TextoPasso3 {
+        margin-top: 1.5625rem;
+        font-size: 2.3rem;
+    }
+
+    .Informacao:nth-of-type(3) .PassoAPasso {
+        font-size: 4rem;
+    }
+
+    .Retangulo {
+        justify-content: center;
+        flex-direction: column;
+        height: 150vh;
+        width: 20vw;
+    }
+
+    .Informacao:nth-of-type(4) .ConteudoTabelas {
+        height: 65rem;
+        flex-direction: column;
+    }
+
+    .Quadrado {
+        flex-direction: column;
+    }
+
+    .Informacao:nth-of-type(4) {
+        min-height: 100vh;
+        height: min-content;
+        flex-direction: column;
+    }
+
+    .Informacao:nth-of-type(4) .TextoTabelas {
+        font-size: 4rem;
+        text-align: center;
+    }
+
+    .Informacao:nth-of-type(4) .Tabelas {
+        width: 500px;
+        height: 400px;
+        max-width: 500px;
+    }
+
+    .ConteudoTabelas {
+        justify-content: center;
+        flex-direction: column;
+        height: 60vh;
+        width: 20vw;
+    }
+
+    .TabelaUm {
+        flex-direction: column;
+    }
+
+    .TabelaDois {
+        flex-direction: column;
+    }
+
+    .HelpCode {
+        text-align: center;
+    }
+
+    .Copyright {
+        text-align: center;
+    }
+
+    /*.Titulo1 {
+        font-size: 2.5rem;
+    }
+
+    .Titulo2 {
+        font-size: 2.5rem;
+    }*/
+
+    .ConteudoTabela1 .Conteudo1 {
+        font-size: 2rem;
+    }
+
+    .ConteudoTabela1 .Conteudo2 {
+        font-size: 2rem;
+    }
+
+    .ConteudoTabela1 .Conteudo3 {
+        font-size: 2rem;
+    }
+
+    .ConteudoTabela1 .Valor1 {
+        font-size: 2rem;
+    }
+
+    .ConteudoTabela2 .Conteudo1 {
+        font-size: 2rem;
+    }
+
+    .ConteudoTabela2 .Conteudo2 {
+        font-size: 2rem;
+    }
+
+    .ConteudoTabela2 .Conteudo3 {
+        font-size: 2rem;
+    }
+
+    .ConteudoTabela2 .Valor2 {
+        font-size: 2rem;
+    }
+
+
+
+    .Rodape {
+        height: 50px;
+    }
+
+    .TextoRodape {
+        width: 700px;
+    }
+
+    .Copyright {
+        font-size: 1.2rem;
+    }
+
+    .LogoRodape {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .EspacoCarro {
+        width: 800px;
+        height: 300px;
+    }
+
+    .Informacao:nth-of-type(4) .Titulo1 {
+        font-size: 2.5rem;
+    }
+
+    .Informacao:nth-of-type(4) .Conteudo1 {
+        font-size: 2.2rem;
+    }
+
+    .Informacao:nth-of-type(4) .Conteudo2 {
+        font-size: 2.2rem;
+    }
+
+    .Informacao:nth-of-type(4) .Valor1 {
+        font-size: 2.2rem;
+    }
+
+    .Informacao:nth-of-type(4) .Registrar1 {
+        font-size: 2.2rem;
+    }
+
+    .Informacao:nth-of-type(4) .Registrar2 {
+        font-size: 2.2rem;
+    }
+
+    .Informacao:nth-of-type(4) .Titulo2 {
+        font-size: 2.5rem;
+    }
+}
+
+
+@media all and (max-height:768px) {
+
+    .menu {
+        height: 4rem;
+    }
+
+    .menu .entrar {
+        font-size: 1.5rem;
+    }
+
+    .menu a {
+        padding: 0rem;
+    }
+
+    .Logo {
+        height: 3rem;
+        width: 3rem;
+    }
+
+    .Informacao:nth-of-type(1) .HelpCode {
+        padding-top: 3rem;
+        font-size: 3rem;
+
+    }
+
+    .Informacao:nth-of-type(1) .Iniciar {
+        font-size: 2rem;
+    }
+
+    .Informacao:nth-of-type(1) .Instrucoes {
+        font-size: 2rem;
+        margin-top: 10px;
+    }
+
+    .Informacao:nth-of-type(1) .Subtitulo {
+        font-size: 2rem;
+
+    }
+
+    .Informacao:nth-of-type(3) {
+        min-height: 150vh;
+    }
+
+    .Informacao:nth-of-type(3) .PassoAPasso {
+        font-size: 3rem;
+    }
+
+    .Informacao:nth-of-type(4) {
+        min-height: 150vh;
+    }
+
+    .Informacao:nth-of-type(4) .TextoTabelas {
+        font-size: 3rem;
+    }
+
+    .Informacao:nth-of-type(2) .TextoFuncionamento {
+        font-size: 3rem;
+    }
+
+    .EspacoCarro {
+        width: 500px;
+    }
+
+    .Copyright {
+        font-size: 1.5rem;
+    }
+
+    .LogoRodape {
+        width: 3rem;
+        height: 3rem;
+    }
+
+
+}
+
+@media all and (max-height:768px) {
+    .Informacao:nth-of-type(3) {
+        min-height: 200vh;
+    }
+
+}
+
+@media all and (min-width:1025px) {
+    .Informacao:nth-of-type(3) {
+        min-height: 100vh;
+    }
+
+    .Informacao:nth-of-type(4) {
+        min-height: 100vh;
+    }
+
+    .Copyright {
+        font-size: 1rem;
+    }
+}

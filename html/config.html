@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <title>
+        Configurações
+    </title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/lib/jquery-3.4.1.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-storage.js"></script>
+
+    <script src="../js/lib/init-firebase.js"></script>
+    <script src="../js/menuAdm.js"></script>
+    <script src="../js/config.js"></script>
+    <link rel="stylesheet" href="../css/menuAdm.css">
+    <link rel="stylesheet" href="../css/config.css">
+
+</head>
+
+<body>
+    <div class="lds-css ng-scope">
+        <div></div>
+        <span>Help Code</span>
+    </div>
+    <nav>
+        <ul class="menu">
+            <li id="menuAdm"><img src="../img/menu.png" alt=""></li>
+            <li><img src="../img/logo.png" alt=""></li>
+            <li><a href="./help-code.html">Página Inicial</a></li>
+            <li><a href="./tabelas.html">Tabelas</a></li>
+            <li><a href="./produtos.html">Produtos</a></li>
+            <li><a href="./config.html">Configurações</a></li>
+            <li><a id="logOut" href="#">Sair</a></li>
+        </ul>
+    </nav>
+
+    <!-- primiro bloco aonde fica o logo e info da empresa -->
+    <article class="bloco">
+        <div class="buscar">
+            <div class="cimg">
+                <img src="" class="img" id="img">
+            </div>
+            <input type="file" class="arq" id="buscar">
+            <a href="#carro" class="btn1" id="btn">Buscar logo da empresa</a>
+        </div>
+
+        <form class="info">
+
+            <p>Nome de sua empresa:</p>
+            <input id="nomeEmpresa" type="text" class="campo" required />
+            <p> Telefone de contato:</P>
+            <input id="telefoneEmpresa" type="text" class="campo" required />
+            <p>Email da empresa:</P>
+            <input id="emailEmpresa" type="text" class="campo" required />
+            <p>Endereço:</p>
+            <textarea id="enderecoEmpresa" style="resize: none" rows="3" cols="50" class="campo1"
+                maxlength="75"></textarea>
+            <a href="#carro" class="btn2" id="btn1">Gravar informações</a>
+        </form>
+    </article>
+</body>
+
+</html>

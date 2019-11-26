@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #57A4ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    /* 57a4ff */
+    font-family: 'Nunito', sans-serif;
+}
+
+.containerEmpresa {
+    height: 40rem;
+    width: 100vw;
+    background-color: #2488ff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    position: relative;
+    padding-bottom: 15rem;
+}
+
+.containerEmpresa .divLogoEmpresa {
+    overflow: hidden;
+    background-color: #44444455;
+    border-radius: 25%;
+    height: 15rem;
+    width: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 100%;
+    left: 10vw;
+    padding: 3rem;
+}
+
+.containerEmpresa .divLogoEmpresa .logoEmpresa {
+    max-height: 15rem;
+    max-width: 15rem;
+    margin: 3rem;
+}
+
+.containerEmpresa .informacoes {
+    position: absolute;
+    width: 40rem;
+    left: calc(12vw + 21rem);
+}
+
+.containerEmpresa .informacoes .nome {
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+.containerEmpresa .informacoes .outrosText {
+    font-size: 1.5rem;
+}
+
+
+
+
+.tabela {
+    overflow: hidden;
+    position: absolute;
+    top: 40rem;
+    width: 80vw;
+    border-radius: 2rem 2rem 0 0;
+    background-color: #444;
+    padding-bottom: 5rem;
+}
+
+.tabela .titulo {
+    color: #ddd;
+    width: 100%;
+    font-size: 4vw;
+    padding: 3rem 0;
+    margin: 0;
+    text-align: center;
+    border-radius: 0 0 2rem 2rem;
+    background-color: #222;
+    text-transform: uppercase;
+}
+
+.tabela .dados {
+    width: calc(100% - 2rem);
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 12rem;
+}
+
+.tabela .dados .chaveValor {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #ddd;
+    margin-left: 2rem;
+}
+
+.tituloSecao {
+    font-size: 1.7vw;
+    margin-bottom: 0;
+    color: #fff;
+    margin-top: 2.2rem;
+    text-transform: uppercase;
+}
+
+.tituloSecao {
+    margin-top: 1.1rem !important;
+}
+
+.tabela .dados .chaveValor h2 {
+    font-size: 1.5vw;
+    text-transform: uppercase;
+}
+
+.tabela .dados .chaveValor p {
+    font-size: 1.3vw;
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+}
+
+
+
+
+.titleImgs {
+    margin-top: 3rem !important;
+    margin-left: 2rem;
+}
+
+.containerImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.containerImg img {
+    max-height: 25rem;
+}
+
+
+
+
+
+
+
+
+
+.erroProduto {
+    width: 60rem;
+    height: 20rem;
+    border: 0.1rem solid #444;
+    border-radius: 1rem;
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.erroProduto .imgErro {
+    height: 17rem;
+    align-self: flex-end;
+}
+
+.erroProduto .informacoes {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4vw;
+}
+
+.erroProduto .informacoes h1 {
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .containerEmpresa .divLogoEmpresa {
+        height: 5rem;
+        width: 5rem;
+        top: 12rem;
+        left: 10vw;
+        padding: 1rem;
+    }
+
+    .containerEmpresa .divLogoEmpresa .logoEmpresa {
+        max-height: 5rem;
+        max-width: 5rem;
+        margin: 1rem;
+    }
+
+    .containerEmpresa .informacoes {
+        left: calc(12vw + 10rem);
+    }
+}
+
+@media screen and (max-width: 972px) {
+    .erroProduto {
+        width: 20rem;
+        height: fit-content;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .erroProduto .imgErro {
+        padding-top: 2rem;
+        width: 17rem;
+        height: min-content;
+        align-self: flex-start;
+    }
+
+
+    .containerEmpresa {
+        flex-direction: column;
+        height: 20rem;
+    }
+
+    .containerEmpresa .divLogoEmpresa {
+        top: 2rem;
+        left: calc(50vw - 3.5rem);
+    }
+
+    .containerEmpresa .informacoes {
+        left: 5vw;
+        top: 12rem;
+        width: 95vw;
+    }
+
+    .containerEmpresa .informacoes .nome {
+        font-size: 2rem;
+    }
+
+    .containerEmpresa .informacoes .outrosText {
+        font-size: 3.7vw;
+    }
+
+
+
+
+    .tabela {
+        width: 100vw;
+        top: 30rem;
+    }
+
+    .tabela .titulo {
+        padding: 3rem 0;
+        text-align: center;
+        font-size: 7vw;
+    }
+
+    .tituloSecao {
+        font-size: 4.2vw;
+    }
+
+    .tabela .dados .chaveValor h2 {
+        font-size: 3.8vw;
+    }
+
+    .tabela .dados .chaveValor p {
+        font-size: 3.4vw;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes lds-eclipse {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes lds-eclipse {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.lds-css {
+    height: 100vh;
+    width: 100vw;
+    background-color: #222;
+    position: fixed;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lds-css div {
+    -webkit-animation: lds-eclipse 0.9s linear infinite;
+    animation: lds-eclipse 0.9s linear infinite;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    box-shadow: 0 4px 0 0 #57a4ff;
+}
+
+.lds-css span {
+    font-size: 2.2rem;
+    margin-top: 2rem;
+    color: #ddd;
+}
+
+.lds-css span:after {
+    content: "";
+    display: block;
+    height: 0.2rem;
+    width: 7rem;
+    background-color: #57A4ff;
+    margin: 1rem auto 0;
+}

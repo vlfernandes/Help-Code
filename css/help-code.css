@@ -1,0 +1,312 @@
+.page {
+    padding-top: 3rem;
+    width: 100vw;
+    height: calc(100vh - 3rem);
+    min-height: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+section {
+    background-image: url("../img/fundoADM.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.typeIsNotUser {
+    display: none;
+}
+
+h1 {
+    margin: 10vh 0;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+h1:after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 40px;
+    background-color: #57A4ff;
+    margin: 20px auto 0;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    background-color: #57A4FF;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.conteudo img {
+    width: 30vw;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.conteudo div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.conteudo div p {
+    width: 30vw;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 3rem 3rem 3rem;
+}
+
+.conteudo div a {
+    text-decoration: none;
+    color: #FFF;
+    background-color: #000;
+    border-radius: 1rem;
+    padding: 1rem 4rem;
+    text-align: center;
+}
+
+.conteudo div a:hover {
+    text-decoration: none;
+    color: #222;
+    background-color: #FFF;
+    border-radius: 1rem;
+    padding: 1rem 4rem;
+}
+
+
+.conteudoFinal {
+    justify-content: space-between;
+    background-color: transparent;
+    width: 45vw;
+}
+
+.conteudoFinal img {
+    width: 20vw;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.conteudoFinal div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.conteudoFinal div a {
+    text-decoration: none;
+    color: #FFF;
+    background-color: #000;
+    border-radius: 0;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+.conteudoFinal div a:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #222;
+    border-radius: 0;
+    padding: 1rem 0;
+}
+
+
+/*///////////////////////////////////// PARA TABLET ////////////////////////////////////*/
+@media screen and (max-width: 1024px) {
+    section {
+        background-image: url("");
+    }
+
+    section:last-child {
+        background-image: url("../img/fundoADM.png");
+    }
+
+    .conteudo {
+        flex-direction: column;
+        background-color: #2488ff;
+        margin-bottom: 3rem;
+        min-height: min-content;
+    }
+
+    h1 {
+        margin: 2rem 0;
+        font-size: 2.2rem;
+    }
+
+    .conteudo img {
+        width: 70vw;
+    }
+
+    .conteudo div {
+        width: 70vw;
+    }
+
+    .conteudo div p {
+        margin: 3rem 1rem 3rem 1rem;
+        width: 50vw;
+        color: #fff;
+    }
+
+    .conteudo div a {
+        margin-bottom: 3rem;
+    }
+
+    .conteudoFinal {
+        flex-direction: row;
+        background-color: transparent;
+        margin-bottom: 0;
+        min-height: initial;
+        width: 70vw;
+    }
+
+    .conteudoFinal img {
+        width: 30vw;
+    }
+
+    .conteudoFinal div {
+        width: initial;
+    }
+
+    .conteudoFinal div a {
+        margin-bottom: 0;
+    }
+}
+
+
+/*///////////////////////////////////// PARA CELULAR ////////////////////////////////////*/
+@media screen and (max-width: 768px) {
+    section:last-child {
+        background-image: url("");
+    }
+
+    .conteudo img {
+        width: 90vw;
+    }
+
+    .conteudo div {
+        width: 90vw;
+    }
+
+    .conteudo div p {
+        width: 70vw;
+    }
+
+    .page:last-child {
+        height: min-content;
+    }
+
+    .conteudoFinal {
+        flex-direction: column;
+        justify-content: start;
+        width: 100vw;
+        height: 35rem;
+    }
+
+    .conteudoFinal img {
+        width: 20rem;
+    }
+
+    .conteudoFinal div {
+        width: initial;
+    }
+
+    .conteudoFinal div:first-child {
+        margin-bottom: 2rem;
+    }
+
+    .conteudoFinal div a {
+        margin-bottom: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes lds-eclipse {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes lds-eclipse {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.lds-css {
+    height: 100vh;
+    width: 100vw;
+    background-color: #222;
+    position: fixed;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lds-css div {
+    -webkit-animation: lds-eclipse 0.9s linear infinite;
+    animation: lds-eclipse 0.9s linear infinite;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    box-shadow: 0 4px 0 0 #57a4ff;
+}
+
+.lds-css span {
+    font-size: 2.2rem;
+    margin-top: 2rem;
+    color: #ddd;
+}
+
+.lds-css span:after {
+    content: "";
+    display: block;
+    height: 0.2rem;
+    width: 7rem;
+    background-color: #57A4ff;
+    margin: 1rem auto 0;
+}
