@@ -6,7 +6,6 @@ $(function () {
             procurarProdutos(user.uid)
         } else {
             window.location.href = ("../html/login.html");
-            // $(".lds-css").fadeOut("slow");
         }
     });
 

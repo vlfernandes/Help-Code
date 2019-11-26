@@ -19,6 +19,7 @@
 .bxslider {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 ul.bxslider {
@@ -33,11 +34,8 @@ ul.bxslider {
 /** THEME
 ===================================*/
 .bx-wrapper {
-  -moz-box-shadow: 0 0 5px #ccc;
-  -webkit-box-shadow: 0 0 5px #ccc;
-  box-shadow: 0 0 5px #ccc;
-  border: 5px solid #fff;
-  background: #fff;
+  border: 5px solid transparent;
+  background: transparent;
 }
 
 .bx-wrapper .bx-pager,
@@ -70,7 +68,7 @@ ul.bxslider {
 }
 
 .bx-wrapper .bx-pager.bx-default-pager a {
-  background: #666;
+  background: #111;
   text-indent: -9999px;
   display: block;
   width: 10px;
@@ -85,7 +83,7 @@ ul.bxslider {
 .bx-wrapper .bx-pager.bx-default-pager a:hover,
 .bx-wrapper .bx-pager.bx-default-pager a.active,
 .bx-wrapper .bx-pager.bx-default-pager a:focus {
-  background: #000;
+  background: #2488ff;
 }
 
 .bx-wrapper .bx-pager-item,

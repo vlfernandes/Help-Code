@@ -202,6 +202,7 @@ nav {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    bottom: 0;
 }
 
 .lds-css div {

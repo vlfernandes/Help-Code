@@ -1,9 +1,8 @@
 <html lang="pt-br">
 
 <head title="HomePage"></head>
+<link rel="icon" href="./img/logo.png">
 <link rel="stylesheet" type="text/css" href="./css/index.css" media="screen" />
-<link rel="stylesheet" type="text/javascript" src="jquery.js">
-<link type="text/javascript" src="animacao.js">
 
 <body>
     <nav class="menu">
@@ -11,8 +10,8 @@
             <li><img src="./img/index/logoFinalizado.svg" class="Logo" title="Help Code"></li>
             <li class="paginaInicial"><a href="#">Página Inicial</a></li>
             <li class="funcionamento"><a href="#carro">Funcionamento</a></li>
-            <li class="instrucoes"><a href="#instrucoes">Passo a Passo</a></li>
-            <li class="tabelas"><a href="#tabelas">Tabelas</a></li>
+            <li class="instrucoes"><a href="#instrucoes">Instruções</a></li>
+            <li class="tabelas"><a href="#tabelas">Iniciar Sessão</a></li>
             <li class="entrar"><a href="./html/login.html">Entrar</a></li>
 
         </ul>
@@ -20,7 +19,9 @@
     <!------------------------------------------------------------------------------------------------>
     <div class="Fundo">
         <div class="Informacao">
-            <img id="myVideo" src="./img/index/video.gif" alt="">
+            <video autoplay muted loop id="myVideo">
+                <source src="./video/video.mp4" type="video/mp4">
+            </video>
             <div class="HelpCode">
                 <h1>Help Code</h1>
                 <h3 class="Subtitulo">Todas as informações dos seus produtos nas mãos dos seus clientes</h3>
@@ -66,20 +67,17 @@
                 </div>
             </div>
         </div>
-        <!-- Deixei "Um" para os tres pois nao altera nada -->
         <!------------------------------------------------------------------------------------------------>
         <div class="Informacao" id="tabelas">
             <div class="TextoTabelas">
                 <a>Escolha uma das tabelas para começar</a>
             </div>
             <div class="ConteudoTabelas">
-                <!--                        <div class="TabelaUm">-->
                 <div class="Tabelas">
                     <a class="Titulo1">Help Code</a>
                     <div class="ConteudoTabela1">
                         <a class="Conteudo1">Tabelas: 1</a>
                         <a class="Conteudo2">Cadastros/mês: 10</a>
-                        <a class="Conteudo3">Mensageiro: X</a>
                         <a class="Valor1">R$0,00</a>
                     </div>
                     <div class="BotaoTabelaUm">
@@ -87,14 +85,12 @@
                     </div>
                 </div>
                 <div class="Tabelas">
-                    <!--                            <img src="EstrelaPro.png" class="Tabelas">-->
                     <a class="Titulo2">Help Code Pro <img src="./img/index/EstrelaPro.png" width="20px" height="20px"
                             class="Estrela"></a>
                     <div class="ConteudoTabela2">
                         <a class="Conteudo1">Tabelas: Ilimitado</a>
                         <a class="Conteudo2">Cadastros/mês: Ilimitado</a>
-                        <a class="Conteudo3">Mensageiro: X</a>
-                        <a class="Valor2">R$XX,XX</a>
+                        <a class="Valor2">R$89,90</a>
                     </div>
                     <div class="BotaoTabelaDois">
                         <a href="./html/login.html" class="Registrar2">Registrar</a>
@@ -106,7 +102,7 @@
     <!------------------------------------------------------------------------------------------------>
     <footer class="Rodape">
         <div class="TextoRodape">
-            <p class="Copyright">Copyright &#169; 2019 - Todos os direitos reservados - Help Code</p>
+            <p class="Copyright">&#169; Copyright 2019 - Todos os direitos reservados - Help Code</p>
         </div>
         <div class="EspacoLogo">
             <img class="LogoRodape" src="./img/index/logoFinalizado.svg">

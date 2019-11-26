@@ -105,7 +105,7 @@ body {
     margin-left: 2rem;
 }
 
-.tabela .dados .tituloSecao {
+.tituloSecao {
     font-size: 1.7vw;
     margin-bottom: 0;
     color: #fff;
@@ -113,7 +113,7 @@ body {
     text-transform: uppercase;
 }
 
-.tabela .dados .tituloSecao {
+.tituloSecao {
     margin-top: 1.1rem !important;
 }
 
@@ -128,9 +128,23 @@ body {
     text-transform: uppercase;
 }
 
+
+
+
+.titleImgs {
+    margin-top: 3rem !important;
+    margin-left: 2rem;
+}
+
 .containerImg {
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.containerImg img {
+    max-height: 25rem;
 }
 
 
@@ -245,7 +259,7 @@ body {
         font-size: 7vw;
     }
 
-    .tabela .dados .tituloSecao {
+    .tituloSecao {
         font-size: 4.2vw;
     }
 

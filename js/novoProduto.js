@@ -757,14 +757,13 @@ $(function () {
                     if (existeImg) {
                         var storageRef = storage.ref();
                         for (let i = 0; i < imgs.length; i++) {
+                            console.log(imgs[i])
                             if (i == imgs.length - 1) {
                                 storageRef.child('usuarios/' + userId + '/produtos/' + id + '/' + i).put(imgs[i]).then(function () {
                                     geraQRCode(aux.id)
                                 });
                             } else {
-                                storageRef.child('usuarios/' + userId + '/produtos/' + id + '/' + i).put(imgs[i]).then(function () {
-                                    console.log("Concluiu inseção")
-                                });
+                                storageRef.child('usuarios/' + userId + '/produtos/' + id + '/' + i).put(imgs[i]).then(function () {});
                             }
                         }
                     } else {

@@ -1,4 +1,11 @@
 $(function () {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (!user) {
+            window.location.href = ("../html/login.html");
+        }
+        $(".lds-css").fadeOut("slow");
+    });
+
     var db = firebase.firestore();
     let idSecao = 1;
     let idItem = 1;
@@ -327,29 +334,10 @@ $(function () {
     }
 
     function escreverTabela(userId, nomeTabela, tabela) {
-        console.log(tabela)
         setTimeout(() => {
             db.collection("usuarios").doc(userId).collection("tabelas").doc().set({
                 [nomeTabela]: tabela
             }).then(function () {
-                // db.collection("usuarios").doc(userId).collection("tabelas").get().then(function (tabelas) {
-                //     tabelas.forEach(tabela => {
-                //         if (Object.keys(tabela.data())[0] == nomeTabela) {
-                //             let tabelaId = tabela.id
-                //             db.collection("produtos").doc().set({
-                //                 [userId]: tabelaId
-                //             }).then(function () {
-
-                //             }).catch(function (error) {
-                //                 console.error("Error writing document: ", error);
-                //             });
-
-                //         }
-                //     });
-
-                // }).catch(function (error) {
-                //     console.log(error);
-                // });
                 $("#bloco").removeClass("escondido");
                 $("#load").addClass("escondido");
             }).catch(function (error) {
