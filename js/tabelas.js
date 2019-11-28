@@ -31,26 +31,13 @@ $(function () {
                     </section>
                 `);
         } else if ($(this).text() == "Editar") {
-            adicionarTabelaSecao()
-            tabelaAtual = $(this).parent().parent().parent().find("h2");
-            firebase.auth().onAuthStateChanged(function (user) {
-                if (user) {
-                    db.collection("usuarios").doc(user.uid).collection("tabelas").get().then(function (tabelas) {
-                        tabelas.forEach(tabela => {
-                            if (Object.keys(tabela.data())[0] == tabelaAtual.text()) {
-                                let nomeTabela = Object.keys(tabela.data())[0];
-                                let modelTabela = Object.values(tabela.data())[0]
+            notificacao(`
+                <section class="notificacao">
+                    <div id="load"></div>
+                </section>
+            `);
+            coletaDadosTabela($(this))
 
-                                console.log(nomeTabela);
-                                console.log(modelTabela);
-                            }
-                        });
-
-                    }).catch(function (error) {
-                        console.log(error);
-                    });
-                }
-            });
         } else if ($(this).text() == "Vizualizar") {
             notificacao(`
                 <section class="notificacao">
@@ -58,23 +45,7 @@ $(function () {
                 </section>
             `);
 
-            table = $(this).parent().find("img").attr("id").split("view")[1]
-            firebase.auth().onAuthStateChanged(function (user) {
-                if (user) {
-                    db.collection("usuarios").doc(user.uid).collection("tabelas").get().then(function (tabelas) {
-                        tabelas.forEach(tabela => {
-                            if (tabela.id == table) {
-                                setTimeout(() => {
-                                    vizualizarTabela(tabela.data())
-                                }, 500);
-                            }
-                        });
-
-                    }).catch(function (error) {
-                        console.log(error);
-                    });
-                }
-            });
+            coletaDadosTabela($(this))
         }
     });
 
@@ -94,13 +65,6 @@ $(function () {
         $(".notificacao").fadeOut(500)
         setTimeout(() => {
             $(".notificacao").remove()
-        }, 500);
-    });
-
-    $("body").on("click", "#sairEdit", function () {
-        $("#formTabela").fadeOut(500)
-        setTimeout(() => {
-            $("#formTabela").remove()
         }, 500);
     });
 
@@ -132,6 +96,37 @@ $(function () {
         });
     }
 
+    function coletaDadosTabela(instancia) {
+        let table
+        if (instancia.text() == "Editar") {
+            table = instancia.parent().find("img").attr("id").split("edit")[1]
+        } else if (instancia.text() == "Vizualizar") {
+            table = instancia.parent().find("img").attr("id").split("view")[1]
+        }
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                db.collection("usuarios").doc(user.uid).collection("tabelas").get().then(function (tabelas) {
+                    tabelas.forEach(tabela => {
+                        if (tabela.id == table) {
+                            console.log("énois")
+                            setTimeout(() => {
+                                if (instancia.text() == "Editar") {
+                                    editarTabela(tabela.data(), tabela.id)
+                                } else if (instancia.text() == "Vizualizar") {
+                                    vizualizarTabela(tabela.data())
+                                }
+                            }, 500);
+                        }
+                    });
+
+                }).catch(function (error) {
+                    console.log(error);
+                });
+            }
+        });
+    }
+
     function vizualizarTabela(tabela) {
         $(".notificacao").remove();
         notificacao(`
@@ -149,7 +144,6 @@ $(function () {
                 `);
             })
         } else {
-            console.log(Object.keys(Object.values(tabela)[0]))
             Object.keys(Object.values(tabela)[0]).forEach((secoes, i) => {
                 $(".containerView").append(`
                     <h2 class="subtitulo"> - ${secoes}</h2>
@@ -164,8 +158,37 @@ $(function () {
         console.log()
     }
 
-    function editarTabela(tabela) {
-
+    function editarTabela(tabela, tabelaId) {
+        $(".notificacao").remove();
+        notificacao(`
+            <section class="notificacao sobrePage">
+                <div class="containerView">
+                    <a id="closeView" href="#">X</a>
+                    <h2 class="titulo">${Object.keys(tabela)[0]}</h2>
+                </div>
+            </section>
+        `);
+        if (typeof Object.values(tabela)[0][0] == "string") {
+            Object.values(tabela)[0].forEach(value => {
+                $(".containerView").append(`
+                     <input class="inputItem" type='text' value="${value}" maxlength="35" required>
+                `);
+            })
+        } else {
+            Object.keys(Object.values(tabela)[0]).forEach((secoes, i) => {
+                $(".containerView").append(`
+                    <input class="inputSecao" type='text' value="${secoes}" maxlength="35" required>
+                `);
+                Object.values(Object.values(tabela)[0])[i].forEach(itens => {
+                    $(".containerView").append(`
+                        <input class="inputSubiten" type='text' value="${itens}" maxlength="35" required>
+                    `);
+                })
+            })
+        }
+        $(".containerView").append(`
+            <a id="enviarDados" class="enviarDados" href="#">Editar</a>
+        `);
     }
 
     function deletarTabela(delTabela, userId, local) {
@@ -192,43 +215,5 @@ $(function () {
 
     function notificacao(text) {
         $("body").append(text).fadeIn(500);
-    }
-
-    function adicionarTabelaSimples() {
-        $("body").append(`
-        <form autocomplete="off" id="formTabela" class="formTabela">
-            <div class="fundoDoFormulario">
-                <div>
-                    <h1>Nome da tabela: </h1>
-                    <input class="nomeTabela" type='text' name='nomeTabela' id='nomeTabela' maxlength="20">
-                </div>
-                <span class="conteudo estiloDeTabelaItem">
-                    <ul id="item">
-                        <li class="addItem">+ Novo item</li>
-                    </ul>
-                </span>
-                <a id="concluir" class="concluir" href="#">Concluir</a>
-                
-            </div>
-        </form>`);
-    }
-
-    function adicionarTabelaSecao() {
-        $("body").append(`
-        <form autocomplete="off" id="formTabela" class="formTabela">
-            <div class="fundoDoFormulario">
-                <div>
-                    <h1>Nome da tabela: </h1>
-                    <input class="nomeTabela" type='text' name='nomeTabela' id='nomeTabela' maxlength="20">
-                </div>
-                <span class="conteudo">
-                    <ul id="secao">
-                        <li id="addSecao">+ Nova seção</li>
-                    </ul>
-                </span>
-                <a id="concluir" class="concluir" href="#">Concluir</a>
-                <a id="sairEdit" class="sairEdit" href="#">X</a>
-            </div>
-        </form>`);
     }
 });
